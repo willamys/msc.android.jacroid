@@ -22,17 +22,6 @@ modelos para o desenvolvimento de aplicativos na plataforma Android, dentro do d
 pessoas como sensores, por meio da combinação de componentes de software reutilizáveis e
 os sensores presentes nos smartphones. 
 
-Esse projeto está sendo desenvolvido como produto da Dissertação de Mestrado do aluno Willamys Gomes Fonseca Araújo para o curso de Ciência da Computação na Universidade Federal de Pernambuco.
-
-Aluno: Willamys Gomes Fonseca Araújo
-
-Orientador: Vinícius Cardoso Garcia
-
-Trabalho: UMA ABORDAGEM ORIENTADA A MODELOS PARA GERAÇÃO DE APLICAÇÕES BASEADAS EM INTERNET DAS COISAS PARA SMARTPHONES <a href="https://github.com/willamys/msc.android.jacroid/blob/master/Disserta%C3%A7%C3%A3o%20-%20Willamys%20Ara%C3%BAjo%20-%20vers%C3%A3o%2030082017%20-%20Final%20ap%C3%B3s%20corre%C3%A7%C3%B5es.pdf">(link)</a>
-
-OBS: Um exemplo do uso da biblioteca pode ser encontrado <a href="https://github.com/willamys/msc.android.jacroid/tree/master/example">(link)</a>.
-
-
 ## Como começar
 
 Este plugin foi desenvolvido para funcionar na IDE Eclipse. Para isso, antes de mais nada, é necessário realizar o download do plugin e instalá-lo na versão do Eclipse Luna ou superior.
@@ -68,8 +57,6 @@ No Eclipse faça:
 ```
 
 ### Criando arquivo de modelagem do Jacroid Plugin
-
-Explain what these tests test and why
 
 ```
 1. Selecione File > New > Others;
@@ -108,36 +95,25 @@ que foi modelada e de acordo com a IDE selecionada (por exemplo, gen/eclipse). P
 no botão, a Classe M2TAction dentro de msc.android.jacroid.diagram irá recuperar a informação do metamodelo construído no editor e efetuará a transformação junto aos
 templates.
 
-## Deployment
+## Exemplos
 
-Add additional notes about how to deploy this on a live system
+Um exemplo do uso da biblioteca pode ser encontrado:
 
-## Built With
+```
+[Exemplos](https://github.com/willamys/msc.android.jacroid/tree/master/example).
+````
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+## Construído com:
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* [EuGENIA](http://www.eclipse.org/epsilon/doc/eugenia/) - EuGENia is a tool that automatically generates the .gmfgraph, .gmftool and .gmfmap models needed to implement a GMF editor
+* [Eclipse Epsilon](http://www.eclipse.org/epsilon/) - Eclipse Epsilon
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Willamys Araújo** - *Desenvolvedor* - [Willamys](https://github.com/willamys)
+* **Vinícius Cardoso Garcia** - *Orientador*
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
+* **Trabalho:** UMA ABORDAGEM ORIENTADA A MODELOS PARA GERAÇÃO DE APLICAÇÕES BASEADAS EM INTERNET DAS COISAS PARA SMARTPHONES [Dissertação](https://github.com/willamys/msc.android.jacroid/blob/master/Disserta%C3%A7%C3%A3o%20-%20Willamys%20Ara%C3%BAjo%20-%20vers%C3%A3o%2030082017%20-%20Final%20ap%C3%B3s%20corre%C3%A7%C3%B5es.pdf)
+## Licença
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
