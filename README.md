@@ -39,7 +39,7 @@ Este plugin foi desenvolvido para funcionar na IDE Eclipse. Para isso, antes de 
 
 ### Pré-requisitos
 
-Para a instalação é necessário que possua o JDK 7 ou superior instalado no Sistema Operacional (Windows, Linux ou Mac Os). `
+Para a instalação é necessário que possua o JDK 7 ou superior instalado no Sistema Operacional (Windows, Linux ou Mac OS).
 
 ### Instalação
 
@@ -51,23 +51,19 @@ O passo a passo para a instalação do plugin será descrito a seguir:
 3. Instale o plugin:
 3.1 Inicie Eclipse, selecione o workbench;
 3.2 Selecione Help > Install New Software;
-3.3 Clique em Add em "Work with" e selecione "msc.android.jacroid.zip"
-3.4 Clique em "Next", Review, then "Next", aceite os termos da licença e "Finish".
-3.5 Restart Eclipse
+3.3 Clique em Add em "Work with", depois em Local e selecione "msc.android.jacroid.zip" no seu computador;
+3.4 Clique em "Next", Review, then "Next", aceite os termos da licença e "Finish";
+3.5 Reinicie o Eclipse.
+```
+## Criando novo projeto com o Jacroid Plugin
+
+No Eclipse faça:
 
 ```
-
-And repeat
-
+1. Selecione File > New > Project;
+2. Defina um nome para o projeto;
+3. Clique em "Finish".
 ```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
 
 ### Break down into end to end tests
 
