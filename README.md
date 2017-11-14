@@ -99,9 +99,9 @@ templates.
 
 Um exemplo do uso da biblioteca pode ser encontrado:
 
-```
+
 [Exemplos](https://github.com/willamys/msc.android.jacroid/tree/master/example).
-````
+
 
 ## Construído com:
 
@@ -113,7 +113,7 @@ Um exemplo do uso da biblioteca pode ser encontrado:
 * **Willamys Araújo** - *Desenvolvedor* - [Willamys](https://github.com/willamys)
 * **Vinícius Cardoso Garcia** - *Orientador*
 
-* **Trabalho:** UMA ABORDAGEM ORIENTADA A MODELOS PARA GERAÇÃO DE APLICAÇÕES BASEADAS EM INTERNET DAS COISAS PARA SMARTPHONES [Dissertação](https://github.com/willamys/msc.android.jacroid/blob/master/Disserta%C3%A7%C3%A3o%20-%20Willamys%20Ara%C3%BAjo%20-%20vers%C3%A3o%2030082017%20-%20Final%20ap%C3%B3s%20corre%C3%A7%C3%B5es.pdf)
+* **Trabalho:** UMA ABORDAGEM ORIENTADA A MODELOS PARA GERAÇÃO DE APLICAÇÕES BASEADAS EM INTERNET DAS COISAS PARA SMARTPHONES - [Dissertação](https://github.com/willamys/msc.android.jacroid/blob/master/Disserta%C3%A7%C3%A3o%20-%20Willamys%20Ara%C3%BAjo%20-%20vers%C3%A3o%2030082017%20-%20Final%20ap%C3%B3s%20corre%C3%A7%C3%B5es.pdf)
 ## Licença
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
