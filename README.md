@@ -92,7 +92,6 @@ contexto diagramático.
 associação mnemônica, o usuário é levado a compor seu modelo, utilizando componentes num esquema de cima para baixo nas seções estabelecidas, assim em qualquer 
 criação de regra parte-se da utilização dessa sequência de seções, para utilização dos construtores. A paleta de construtores está ilustrada na Figura 3.9 e possui as seguintes ações:
 
-
 <img src="https://github.com/willamys/msc.android.jacroid/blob/master/img/paleta.PNG" title="Paleta de construtores"/>
 
 
@@ -100,10 +99,8 @@ criação de regra parte-se da utilização dessa sequência de seções, para u
 O AttributeDescriptor é um Object que define atributos que devem ser associados as ClassesDescriptor. O Component é um Object que define o Component/Sensor que o usuário deseja utilizar. O Enumerate é
 um Object para representar um AttributeDescriptor que possua uma lista de opções, essas opções são definidas por cada ItemEnum. O FirebaseAuth é Object que tem a função de permitir a autenticação na base de dados do firebase.
 
-
 2.2 Connections - estabelece a ligação entre os Objects. Para isso, em suas propriedades ele armazena a origem (source) e o destino (target). O
 RelationClasseDescriptor permite a ligação entre as ClassesDescriptor e o RelationAttributeDescriptorToComponent entre uma AttributeDescriptor e um Component.
-
 
 3. Propriedades - Na aba propriedades é possível estabelecer valores de entrada para as propriedades dos componentes inseridos na área de desenho do diagrama.
 
