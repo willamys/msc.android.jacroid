@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:jacroidEMF="jacroidEMF" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_graaYAg6Eeei2KTCNLMa7w" type="JacroidEMF" name="default.jacroidemf_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_joi54Ag6Eeei2KTCNLMa7w" type="2002" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_jovHIAg6Eeei2KTCNLMa7w" type="5004"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_jovHIQg6Eeei2KTCNLMa7w" type="7002">
+      <children xmi:type="notation:Shape" xmi:id="_BNm8MAjpEeeS5fvWaT02_g" type="3002" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_BNm8MgjpEeeS5fvWaT02_g" type="5003"/>
+        <element xmi:type="jacroidEMF:AttributeDescriptor" href="default.jacroidemf#//@classes.0/@attributes.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BNm8MQjpEeeS5fvWaT02_g"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_BNm8MwjpEeeS5fvWaT02_g" type="3002" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_BNm8NQjpEeeS5fvWaT02_g" type="5003"/>
+        <element xmi:type="jacroidEMF:AttributeDescriptor" href="default.jacroidemf#//@classes.0/@attributes.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BNm8NAjpEeeS5fvWaT02_g"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_BNm8NgjpEeeS5fvWaT02_g" type="3002" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_BNm8OAjpEeeS5fvWaT02_g" type="5003"/>
+        <element xmi:type="jacroidEMF:AttributeDescriptor" href="default.jacroidemf#//@classes.0/@attributes.2"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BNm8NwjpEeeS5fvWaT02_g"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_BNm8OQjpEeeS5fvWaT02_g" type="3002" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_BNm8OwjpEeeS5fvWaT02_g" type="5003"/>
+        <element xmi:type="jacroidEMF:AttributeDescriptor" href="default.jacroidemf#//@classes.0/@attributes.3"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BNm8OgjpEeeS5fvWaT02_g"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_a5IXwAmwEeeBCoxgTtvUSw" type="3002" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_a5I-0AmwEeeBCoxgTtvUSw" type="5003"/>
+        <element xmi:type="jacroidEMF:AttributeDescriptor" href="default.jacroidemf#//@classes.0/@attributes.4"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a5IXwQmwEeeBCoxgTtvUSw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_ApSo8Am_EeeBCoxgTtvUSw" type="3002" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_ApTQAAm_EeeBCoxgTtvUSw" type="5003"/>
+        <element xmi:type="jacroidEMF:AttributeDescriptor" href="default.jacroidemf#//@classes.0/@attributes.5"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ApSo8Qm_EeeBCoxgTtvUSw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_jovHIgg6Eeei2KTCNLMa7w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_jovHIwg6Eeei2KTCNLMa7w"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_joi54Qg6Eeei2KTCNLMa7w"/>
+    <element xmi:type="jacroidEMF:ClassesDescriptor" href="default.jacroidemf#//@classes.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_joi54gg6Eeei2KTCNLMa7w" x="30" y="30"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_jovHJAg6Eeei2KTCNLMa7w" type="2003" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_jovuMAg6Eeei2KTCNLMa7w" type="5005"/>
+    <element xmi:type="jacroidEMF:Component" href="default.jacroidemf#//@component.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jovHJQg6Eeei2KTCNLMa7w" x="250" y="120"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_jovuMQg6Eeei2KTCNLMa7w" type="2003" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_jovuMwg6Eeei2KTCNLMa7w" type="5005"/>
+    <element xmi:type="jacroidEMF:Component" href="default.jacroidemf#//@component.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jovuMgg6Eeei2KTCNLMa7w" x="235" y="25"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_jowVQAg6Eeei2KTCNLMa7w" type="2004" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_jowVQwg6Eeei2KTCNLMa7w" type="5007"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_jowVRAg6Eeei2KTCNLMa7w" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_jowVRQg6Eeei2KTCNLMa7w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_jowVRgg6Eeei2KTCNLMa7w"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_jowVQQg6Eeei2KTCNLMa7w"/>
+    <element xmi:type="jacroidEMF:Enumerate" href="default.jacroidemf#//@enumerate.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jowVQgg6Eeei2KTCNLMa7w" x="480" y="-30"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_rtUtsAmwEeeBCoxgTtvUSw" type="2004" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_rtVUwAmwEeeBCoxgTtvUSw" type="5007"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_rtVUwQmwEeeBCoxgTtvUSw" type="7003">
+      <children xmi:type="notation:Shape" xmi:id="_sgOxUAmwEeeBCoxgTtvUSw" type="3005" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_sgOxUgmwEeeBCoxgTtvUSw" type="5009"/>
+        <element xmi:type="jacroidEMF:ItemEnum" href="default.jacroidemf#//@enumerate.1/@item.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgOxUQmwEeeBCoxgTtvUSw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_tP1CQAmwEeeBCoxgTtvUSw" type="3005" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_tP1pUAmwEeeBCoxgTtvUSw" type="5009"/>
+        <element xmi:type="jacroidEMF:ItemEnum" href="default.jacroidemf#//@enumerate.1/@item.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tP1CQQmwEeeBCoxgTtvUSw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_tzcssAmwEeeBCoxgTtvUSw" type="3005" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_tzdTwAmwEeeBCoxgTtvUSw" type="5009"/>
+        <element xmi:type="jacroidEMF:ItemEnum" href="default.jacroidemf#//@enumerate.1/@item.2"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tzcssQmwEeeBCoxgTtvUSw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_rtVUwgmwEeeBCoxgTtvUSw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_rtVUwwmwEeeBCoxgTtvUSw"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_rtUtsQmwEeeBCoxgTtvUSw"/>
+    <element xmi:type="jacroidEMF:Enumerate" href="default.jacroidemf#//@enumerate.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rtUtsgmwEeeBCoxgTtvUSw" x="480" y="65"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_40r8wDZ3EeeuytSoqlRNsw" type="2005" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_40r8wjZ3EeeuytSoqlRNsw" type="5010"/>
+    <element xmi:type="jacroidEMF:FirebaseAuth" href="default.jacroidemf#//@firebaseAuth"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_40r8wTZ3EeeuytSoqlRNsw" x="35" y="-30"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_4NdQ8Da0EeeIf7V0rVFiuA" type="2002" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_4NdQ8za0EeeIf7V0rVFiuA" type="5004"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_4NdQ9Da0EeeIf7V0rVFiuA" type="7002">
+      <children xmi:type="notation:Shape" xmi:id="_CdWzcDa1EeeIf7V0rVFiuA" type="3002" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_CdWzcja1EeeIf7V0rVFiuA" type="5003"/>
+        <element xmi:type="jacroidEMF:AttributeDescriptor" href="default.jacroidemf#//@classes.1/@attributes.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CdWzcTa1EeeIf7V0rVFiuA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_6wL28Da1EeeIf7V0rVFiuA" type="3002" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_6wL28ja1EeeIf7V0rVFiuA" type="5003"/>
+        <element xmi:type="jacroidEMF:AttributeDescriptor" href="default.jacroidemf#//@classes.1/@attributes.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6wL28Ta1EeeIf7V0rVFiuA"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_4NdQ9Ta0EeeIf7V0rVFiuA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_4NdQ9ja0EeeIf7V0rVFiuA"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_4NdQ8Ta0EeeIf7V0rVFiuA"/>
+    <element xmi:type="jacroidEMF:ClassesDescriptor" href="default.jacroidemf#//@classes.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4NdQ8ja0EeeIf7V0rVFiuA" x="25" y="195" width="131" height="66"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_dHkMQDa1EeeIf7V0rVFiuA" type="2004" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_dHkMQza1EeeIf7V0rVFiuA" type="5007"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_dHkMRDa1EeeIf7V0rVFiuA" type="7003">
+      <children xmi:type="notation:Shape" xmi:id="_hUjKEDa1EeeIf7V0rVFiuA" type="3005" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_hUjKEja1EeeIf7V0rVFiuA" type="5009"/>
+        <element xmi:type="jacroidEMF:ItemEnum" href="default.jacroidemf#//@enumerate.2/@item.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hUjKETa1EeeIf7V0rVFiuA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_iD7_oDa1EeeIf7V0rVFiuA" type="3005" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_iD7_oja1EeeIf7V0rVFiuA" type="5009"/>
+        <element xmi:type="jacroidEMF:ItemEnum" href="default.jacroidemf#//@enumerate.2/@item.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iD7_oTa1EeeIf7V0rVFiuA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_jQrfkDa1EeeIf7V0rVFiuA" type="3005" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_jQrfkja1EeeIf7V0rVFiuA" type="5009"/>
+        <element xmi:type="jacroidEMF:ItemEnum" href="default.jacroidemf#//@enumerate.2/@item.2"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jQrfkTa1EeeIf7V0rVFiuA"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_dHkMRTa1EeeIf7V0rVFiuA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_dHkMRja1EeeIf7V0rVFiuA"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_dHkMQTa1EeeIf7V0rVFiuA"/>
+    <element xmi:type="jacroidEMF:Enumerate" href="default.jacroidemf#//@enumerate.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dHkMQja1EeeIf7V0rVFiuA" x="480" y="160"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_graaYQg6Eeei2KTCNLMa7w"/>
+  <element xmi:type="jacroidEMF:Projeto" href="default.jacroidemf#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_BPP68AjpEeeS5fvWaT02_g" type="4004" source="_BNm8NgjpEeeS5fvWaT02_g" target="_jovHJAg6Eeei2KTCNLMa7w">
+    <styles xmi:type="notation:FontStyle" xmi:id="_BPP68QjpEeeS5fvWaT02_g" fontName="Segoe UI"/>
+    <element xmi:type="jacroidEMF:RelationAttributeDescriptorToComponent" href="default.jacroidemf#//@relationAttributeToComponent.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BPP68gjpEeeS5fvWaT02_g" points="[-2, -8, 7, 34]$[-9, -42, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_ap6PEAj3EeeS5fvWaT02_g" type="4004" source="_BNm8OQjpEeeS5fvWaT02_g" target="_jovuMQg6Eeei2KTCNLMa7w">
+    <styles xmi:type="notation:FontStyle" xmi:id="_ap6PEQj3EeeS5fvWaT02_g" fontName="Segoe UI"/>
+    <element xmi:type="jacroidEMF:RelationAttributeDescriptorToComponent" href="default.jacroidemf#//@relationAttributeToComponent.1"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ap6PEgj3EeeS5fvWaT02_g" points="[0, 0, -324, 22]$[290, -20, -34, 2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ap6PEwj3EeeS5fvWaT02_g" id="(0.45,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ap6PFAj3EeeS5fvWaT02_g" id="(0.23943661971830985,0.575)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_GB6p4Da2EeeIf7V0rVFiuA" type="4004" source="_6wL28Da1EeeIf7V0rVFiuA" target="_jovHJAg6Eeei2KTCNLMa7w">
+    <styles xmi:type="notation:FontStyle" xmi:id="_GB6p4Ta2EeeIf7V0rVFiuA" fontName="Segoe UI"/>
+    <element xmi:type="jacroidEMF:RelationAttributeDescriptorToComponent" href="default.jacroidemf#//@relationAttributeToComponent.2"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GB6p4ja2EeeIf7V0rVFiuA" points="[-1, -6, 34, 198]$[-28, -184, 7, 20]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GCEa4Da2EeeIf7V0rVFiuA" id="(0.82,0.375)"/>
+  </edges>
+</notation:Diagram>

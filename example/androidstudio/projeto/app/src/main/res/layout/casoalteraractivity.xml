@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/ScrollView01"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:scrollbars="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ViewBgDefault"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+  <TextView
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="#3e4a56"
+	android:padding="10dp"
+	android:text="Alterar - Caso"
+	android:textColor="@color/white"
+	android:textSize="20sp"
+	android:textStyle="bold" />
+<TextView
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="doenca"
+    android:textColor="#3e4a56" >
+</TextView>
+<Spinner 
+    android:id="@+id/Spinnerdoenca"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:textColor="#3e4a56" >
+</Spinner>
+<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="localizacao"
+    android:textColor="#3e4a56" >
+</TextView>
+<EditText
+    android:id="@+id/EditTextlocalizacao"  
+    android:layout_height="wrap_content"
+    android:inputType="textLongMessage"
+    android:layout_width="fill_parent" 
+    android:textColor="#3e4a56" >
+</EditText>
+<Button
+    android:id="@+id/ButtonSendFeedback"
+    android:layout_height="wrap_content"
+    android:text="Alterar"
+    android:layout_width="fill_parent">
+</Button> 
+<Button
+    android:id="@+id/ButtonBack"
+    android:layout_height="wrap_content"
+    android:text="Voltar"
+    android:layout_width="fill_parent">
+</Button> 
+</LinearLayout>
+</ScrollView>
