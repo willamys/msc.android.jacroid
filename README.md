@@ -108,7 +108,7 @@ Um exemplo do uso da biblioteca pode ser encontrado:
 * [EuGENIA](http://www.eclipse.org/epsilon/doc/eugenia/) - EuGENia is a tool that automatically generates the .gmfgraph, .gmftool and .gmfmap models needed to implement a GMF editor
 * [Eclipse Epsilon](http://www.eclipse.org/epsilon/) - Eclipse Epsilon
 
-## Authors
+## Autores
 
 * **Willamys Araújo** - *Desenvolvedor* - [Willamys](https://github.com/willamys)
 * **Vinícius Cardoso Garcia** - *Orientador*
