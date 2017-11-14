@@ -33,26 +33,28 @@ Trabalho: UMA ABORDAGEM ORIENTADA A MODELOS PARA GERAÇÃO DE APLICAÇÕES BASEA
 OBS: Um exemplo do uso da biblioteca pode ser encontrado <a href="https://github.com/willamys/msc.android.jacroid/tree/master/example">(link)</a>.
 
 
-## Getting Started
+## Como começar
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Este plugin foi desenvolvido para funcionar na IDE Eclipse. Para isso, antes de mais nada, é necessário realizar o download do plugin e instalá-lo na versão do Eclipse Luna ou superior.
 
-### Prerequisites
+### Pré-requisitos
 
-What things you need to install the software and how to install them
+Para a instalação é necessário que possua o JDK 7 ou superior instalado no Sistema Operacional (Windows, Linux ou Mac Os). `
 
-```
-Give examples
-```
+### Instalação
 
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+O passo a passo para a instalação do plugin será descrito a seguir:
 
 ```
-Give the example
+1. Download Eclipse [eclipse-SDK-x.x-win32-x86_64.zip] e extraia os arquivos.
+2. Download o Plugin msc.android.jacroid;
+3. Instale o plugin:
+3.1 Inicie Eclipse, selecione o workbench;
+3.2 Selecione Help > Install New Software;
+3.3 Clique em Add em "Work with" e selecione "msc.android.jacroid.zip"
+3.4 Clique em "Next", Review, then "Next", aceite os termos da licença e "Finish".
+3.5 Restart Eclipse
+
 ```
 
 And repeat
