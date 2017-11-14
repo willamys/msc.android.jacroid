@@ -83,7 +83,7 @@ Explain what these tests test and why
 Na Figura a seguir é ilustrado o Editor GMF. Com o propósito de permitir um melhor
 entendimento, foram enumeradas as partes que o compõem.
 
-<img src="" title="editor">
+<img src="https://github.com/willamys/msc.android.jacroid/blob/master/img/editor_enum_.png" title="editor">
 
 1. Área de desenho - destinada a montagem de diagramas. Nesse espaço, componentes selecionados na paleta de construtores são dispostos de maneira a montar todo o
 contexto diagramático.
@@ -92,7 +92,7 @@ contexto diagramático.
 associação mnemônica, o usuário é levado a compor seu modelo, utilizando componentes num esquema de cima para baixo nas seções estabelecidas, assim em qualquer 
 criação de regra parte-se da utilização dessa sequência de seções, para utilização dos construtores. A paleta de construtores está ilustrada na Figura 3.9 e possui as seguintes ações:
 
-<img src="" title="Paleta de construtores">
+<img src="https://github.com/willamys/msc.android.jacroid/blob/master/img/paleta.PNG" title="Paleta de construtores">
 
 2.1 Objects - estabelece os componentes principais da área de desenho. ClassesDescriptor é um Object que define uma classe do metamodelo de entrada. 
 O AttributeDescriptor é um Object que define atributos que devem ser associados as ClassesDescriptor. O Component é um Object que define o Component/Sensor que o usuário deseja utilizar. O Enumerate é
