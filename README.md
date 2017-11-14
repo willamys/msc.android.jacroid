@@ -85,26 +85,25 @@ entendimento, foram enumeradas as partes que o compõem.
 
 <img src="https://github.com/willamys/msc.android.jacroid/blob/master/img/editor_enum_.png" title="editor"/>
 
-1. Área de desenho - destinada a montagem de diagramas. Nesse espaço, componentes selecionados na paleta de construtores são dispostos de maneira a montar todo o
+1.Área de desenho - destinada a montagem de diagramas. Nesse espaço, componentes selecionados na paleta de construtores são dispostos de maneira a montar todo o
 contexto diagramático.
 
-2. Construtores - Paleta criada obedecendo a conceitos da UML Profiles, de modo a facilitar e instruir a usuários utilizarem a ferramenta. Dentro de uma lógica de
+2.Construtores - Paleta criada obedecendo a conceitos da UML Profiles, de modo a facilitar e instruir a usuários utilizarem a ferramenta. Dentro de uma lógica de
 associação mnemônica, o usuário é levado a compor seu modelo, utilizando componentes num esquema de cima para baixo nas seções estabelecidas, assim em qualquer 
-criação de regra parte-se da utilização dessa sequência de seções, para utilização dos construtores. A paleta de construtores está ilustrada na Figura 3.9 e possui as seguintes ações:
+criação de regra parte-se da utilização dessa sequência de seções, para utilização dos construtores. A paleta de construtores está ilustrada na Figura abaixo e possui as seguintes ações:
 
 <img src="https://github.com/willamys/msc.android.jacroid/blob/master/img/paleta.PNG" title="Paleta de construtores"/>
 
-
-2.1 Objects - estabelece os componentes principais da área de desenho. ClassesDescriptor é um Object que define uma classe do metamodelo de entrada. 
+a.Objects - estabelece os componentes principais da área de desenho. ClassesDescriptor é um Object que define uma classe do metamodelo de entrada. 
 O AttributeDescriptor é um Object que define atributos que devem ser associados as ClassesDescriptor. O Component é um Object que define o Component/Sensor que o usuário deseja utilizar. O Enumerate é
 um Object para representar um AttributeDescriptor que possua uma lista de opções, essas opções são definidas por cada ItemEnum. O FirebaseAuth é Object que tem a função de permitir a autenticação na base de dados do firebase.
 
-2.2 Connections - estabelece a ligação entre os Objects. Para isso, em suas propriedades ele armazena a origem (source) e o destino (target). O
+b.Connections - estabelece a ligação entre os Objects. Para isso, em suas propriedades ele armazena a origem (source) e o destino (target). O
 RelationClasseDescriptor permite a ligação entre as ClassesDescriptor e o RelationAttributeDescriptorToComponent entre uma AttributeDescriptor e um Component.
 
-3. Propriedades - Na aba propriedades é possível estabelecer valores de entrada para as propriedades dos componentes inseridos na área de desenho do diagrama.
+3.Propriedades - Na aba propriedades é possível estabelecer valores de entrada para as propriedades dos componentes inseridos na área de desenho do diagrama.
 
-4. Geração de Código e o Botão Gen Code - nessa área, em que está localizado o projeto criado inicialmente, irá abrigar uma pasta( gen), com o código fonte da aplicação
+4.Geração de Código e o Botão Gen Code - nessa área, em que está localizado o projeto criado inicialmente, irá abrigar uma pasta( gen), com o código fonte da aplicação
 que foi modelada e de acordo com a IDE selecionada (por exemplo, gen/eclipse). Para isso, é preciso estar com o diagrama aberto e clicar no botão "Gen Code". Ao clicar
 no botão, a Classe M2TAction dentro de msc.android.jacroid.diagram irá recuperar a informação do metamodelo construído no editor e efetuará a transformação junto aos
 templates.
