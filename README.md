@@ -55,7 +55,9 @@ O passo a passo para a instalação do plugin será descrito a seguir:
 3.4 Clique em "Next", Review, then "Next", aceite os termos da licença e "Finish";
 3.5 Reinicie o Eclipse.
 ```
-## Criando novo projeto com o Jacroid Plugin
+## Utilizando o Jacroid Plugin
+
+### Criando um novo projeto:
 
 No Eclipse faça:
 
@@ -65,17 +67,48 @@ No Eclipse faça:
 3. Clique em "Finish".
 ```
 
-### Break down into end to end tests
+### Criando arquivo de modelagem do Jacroid Plugin
 
 Explain what these tests test and why
 
 ```
-Give an example
+1. Selecione File > New > Others;
+2. Clique em "JacroidEMF Diagram";
+3. Selecione o Projeto criado anteriormente;
+4. Clique em "Finish".
 ```
 
-### And coding style tests
+### O Plugin
 
-Explain what these tests test and why
+Na Figura a seguir é ilustrado o Editor GMF. Com o propósito de permitir um melhor
+entendimento, foram enumeradas as partes que o compõem.
+
+<img src="" title="editor">
+
+1. Área de desenho - destinada a montagem de diagramas. Nesse espaço, componentes selecionados na paleta de construtores são dispostos de maneira a montar todo o
+contexto diagramático.
+
+2. Construtores - Paleta criada obedecendo a conceitos da UML Profiles, de modo a facilitar e instruir a usuários utilizarem a ferramenta. Dentro de uma lógica de
+associação mnemônica, o usuário é levado a compor seu modelo, utilizando componentes num esquema de cima para baixo nas seções estabelecidas, assim em qualquer 
+criação de regra parte-se da utilização dessa sequência de seções, para utilização dos construtores. A paleta de construtores está ilustrada na Figura 3.9 e possui as seguintes ações:
+
+<img src="" title="Paleta de construtores">
+
+2.1 Objects - estabelece os componentes principais da área de desenho. ClassesDescriptor é um Object que define uma classe do metamodelo de entrada. 
+O AttributeDescriptor é um Object que define atributos que devem ser associados as ClassesDescriptor. O Component é um Object que define o Component/Sensor que o usuário deseja utilizar. O Enumerate é
+um Object para representar um AttributeDescriptor que possua uma lista de opções, essas opções são definidas por cada ItemEnum. O FirebaseAuth
+é Object que tem a função de permitir a autenticação na base de dados do firebase. 
+
+2.2.Connections - estabelece a ligação entre os Objects. Para isso, em suas propriedades ele armazena a origem (source) e o destino (target). O
+RelationClasseDescriptor permite a ligação entre as ClassesDescriptor e o RelationAttributeDescriptorToComponent entre uma AttributeDescriptor e um Component.
+
+3. Propriedades - Na aba propriedades é possível estabelecer valores de entrada para
+as propriedades dos componentes inseridos na área de desenho do diagrama.
+
+4. Geração de Código e o Botão Gen Code - nessa área, em que está localizado o projeto criado inicialmente, irá abrigar uma pasta( gen), com o código fonte da aplicação
+que foi modelada e de acordo com a IDE selecionada (por exemplo, gen/eclipse). Para isso, é preciso estar com o diagrama aberto e clicar no botão "Gen Code". Ao clicar
+no botão, a Classe M2TAction dentro de msc.android.jacroid.diagram irá recuperar a informação do metamodelo construído no editor e efetuará a transformação junto aos
+templates.
 
 ```
 Give an example
