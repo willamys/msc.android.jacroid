@@ -36,11 +36,11 @@ O passo a passo para a instalação do plugin será descrito a seguir:
 
 ```
 1. Download Eclipse [eclipse-SDK-x.x-win32-x86_64.zip] e extraia os arquivos.
-2. Download o Plugin msc.android.jacroid;
+2. Download o Plugin em  https://github.com/willamys/msc.android.jacroid/tree/master/plugin;
 3. Instale o plugin:
 3.1 Inicie Eclipse, selecione o workbench;
 3.2 Selecione Help > Install New Software;
-3.3 Clique em Add em "Work with", depois em Local e selecione "msc.android.jacroid.zip" no seu computador;
+3.3 Clique em Add em "Work with", depois em Local e selecione no seu computador;
 3.4 Clique em "Next", Review, then "Next", aceite os termos da licença e "Finish";
 3.5 Reinicie o Eclipse.
 ```
