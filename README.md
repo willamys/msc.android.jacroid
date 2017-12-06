@@ -35,7 +35,7 @@ Para a instalação é necessário que possua o JDK 7 ou superior instalado no S
 O passo a passo para a instalação do plugin será descrito a seguir:
 
 ```
-1. Download Eclipse [eclipse-SDK-x.x-win32-x86_64.zip] e extraia os arquivos.
+1. Download Eclipse [eclipse-epsilon-1.4-win32-x86_64.zip] e extraia os arquivos.
 2. Download o Plugin em  https://github.com/willamys/msc.android.jacroid/tree/master/plugin;
 3. Instale o plugin:
 3.1 Inicie Eclipse, selecione o workbench;
