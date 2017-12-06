@@ -151,6 +151,7 @@ public class CasoAlterarActivity extends Activity{
 			public void onCancelled(DatabaseError databaseError) {}
 		});
 
+
 		Button botao = (Button) findViewById(R.id.ButtonSendFeedback);
 		botao.setOnClickListener(new View.OnClickListener(){
 			@Override

@@ -89,7 +89,7 @@ View.OnClickListener {
 				} else {
 					// If sign in fails, display a message to the user.
 					Log.w(TAG, "createUserWithEmail:failure", task.getException());
-					Toast.makeText(Authentication.this, "Falha na autenticação. Tente novamente.",
+					Toast.makeText(Authentication.this, "Falha na autenticacao. Tente novamente.",
 							Toast.LENGTH_SHORT).show();
 					updateUI(null);
 				}
@@ -127,14 +127,14 @@ View.OnClickListener {
 				} else {
 					// If sign in fails, display a message to the user.
 					Log.w(TAG, "signInWithEmail:failure", task.getException());
-					Toast.makeText(Authentication.this, "Falha na autenticação. Tente novamente.",
+					Toast.makeText(Authentication.this, "Falha na autenticacao. Tente novamente.",
 							Toast.LENGTH_SHORT).show();
 					updateUI(null);
 				}
 
 				// [START_EXCLUDE]
 				if (!task.isSuccessful()) {
-					mStatusTextView.setText("Falha na autenticação. Tente novamente.");
+					mStatusTextView.setText("Falha na autenticacao. Tente novamente.");
 				}
 				//hideProgressDialog();
 				// [END_EXCLUDE]
@@ -182,7 +182,7 @@ View.OnClickListener {
 
 			//findViewById(R.id.verify_email_button).setEnabled();
 		} else {
-			mStatusTextView.setText("não autenticado");
+			mStatusTextView.setText("nao autenticado");
 			mDetailTextView.setText(null);
 
 			findViewById(R.id.email_password_buttons).setVisibility(View.VISIBLE);

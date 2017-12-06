@@ -24,7 +24,7 @@ import android.view.View;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 import android.widget.TextView;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -45,34 +45,36 @@ public class CasoListarActivity extends Activity{
 	private static final String tag = "CasoListAct";
 	private ArrayList<CasoVO> arrayCaso = new ArrayList<>();
 	private ArrayList<String> keys = new ArrayList<>();
-	private RecyclerView rvCaso;
-	private FirebaseRecyclerAdapter<CasoVO, ViewHolder> adapter;
+	private ListView rvCaso;
+	private FirebaseListAdapter<CasoVO> adapter;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.casolistaractivity);
-		rvCaso = (RecyclerView) findViewById(R.id.rvCaso);
-		rvCaso.setHasFixedSize(true);
+		rvCaso = (ListView) findViewById(R.id.rvCaso);
+		//rvCaso.setHasFixedSize(true);
 		manager = new LinearLayoutManager(this);
 		manager.setReverseLayout(true);
 		manager.setStackFromEnd(true);
-		rvCaso.setLayoutManager(manager);
+		//rvCaso.setLayoutManager(manager);
 		
   
 		reference = FirebaseUtil.getReference("casos").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
-		adapter = new FirebaseRecyclerAdapter<CasoVO, ViewHolder>(CasoVO.class, R.layout.viewholder, ViewHolder.class, reference) {
+		adapter = new FirebaseListAdapter<CasoVO>(this, CasoVO.class, R.layout.item, reference) {
 			@Override
-			protected void populateViewHolder(final ViewHolder viewHolder, CasoVO model, int position) {
+			protected void populateView(final View view, CasoVO model, int position) {
 				final CasoVO casoVO = model;
 				final DatabaseReference ref = getRef(position);
 				final String key = ref.getKey();
-				viewHolder.setKey(key);
-				viewHolder.edit.setOnClickListener(new View.OnClickListener() {
+				final TextView tvKey = (TextView) view.findViewById(R.id.key);
+				tvKey.setText(key);
+				final ImageButton imgbEdit = (ImageButton) view.findViewById(R.id.edit);
+				imgbEdit.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
 
-						PopupMenu popupMenu = new PopupMenu(getApplicationContext(), viewHolder.edit);
+						PopupMenu popupMenu = new PopupMenu(getApplicationContext(), imgbEdit);
 						popupMenu.inflate(R.menu.listmenu);
 						popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 							@Override

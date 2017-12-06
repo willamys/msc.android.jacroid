@@ -5,4 +5,9 @@
         android:orderInCategory="100"
         android:showAsAction="ifRoom|withText"
         android:title="Galeria" />
+    <item
+        android:id="@+id/item_camera"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom|withText"
+        android:title="Camera" />
 </menu>
