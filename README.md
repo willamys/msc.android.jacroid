@@ -113,7 +113,7 @@ Um exemplo do uso da biblioteca pode ser encontrado:
 * **Willamys Araújo** - *Desenvolvedor* - [Willamys](https://github.com/willamys)
 * **Vinícius Cardoso Garcia** - *Orientador*
 
-* **Trabalho:** UMA ABORDAGEM ORIENTADA A MODELOS PARA GERAÇÃO DE APLICAÇÕES BASEADAS EM INTERNET DAS COISAS PARA SMARTPHONES - [Dissertação](https://github.com/willamys/msc.android.jacroid/blob/master/Disserta%C3%A7%C3%A3o%20-%20Willamys%20Ara%C3%BAjo%20-%20vers%C3%A3o%2030082017%20-%20Final%20ap%C3%B3s%20corre%C3%A7%C3%B5es.pdf)
+* **Trabalho:** UMA ABORDAGEM ORIENTADA A MODELOS PARA GERAÇÃO DE APLICAÇÕES BASEADAS EM INTERNET DAS COISAS PARA SMARTPHONES - [Dissertação](https://github.com/willamys/msc.android.jacroid/blob/master/UMA%20ABORDAGEM%20ORIENTADA%20A%20MODELOS%20PARA%20GERA%C3%87%C3%83O%20DE%20APLICA%C3%87%C3%95ES%20BASEADAS%20EM%20INTERNET%20DAS%20COISAS%20PARA%20SMARTPHONES.pdf)
 ## Licença
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/willamys/msc.android.jacroid/tree/master/license/LICENSE.md) file for details
