@@ -55,4 +55,4 @@ O exemplos são baseados na modelagem descrita pela figura a seguir.
 ````
 ## Mais Informações
 
-[Dissertação](https://github.com/willamys/msc.android.jacroid/blob/master/Disserta%C3%A7%C3%A3o%20-%20Willamys%20Ara%C3%BAjo%20-%20vers%C3%A3o%2030082017%20-%20Final%20ap%C3%B3s%20corre%C3%A7%C3%B5es.pdf)
+[Dissertação](https://github.com/willamys/msc.android.jacroid/blob/master/UMA%20ABORDAGEM%20ORIENTADA%20A%20MODELOS%20PARA%20GERA%C3%87%C3%83O%20DE%20APLICA%C3%87%C3%95ES%20BASEADAS%20EM%20INTERNET%20DAS%20COISAS%20PARA%20SMARTPHONES.pdf)
