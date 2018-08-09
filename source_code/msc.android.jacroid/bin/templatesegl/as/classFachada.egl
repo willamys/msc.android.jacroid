@@ -1,0 +1,93 @@
+package com.src.android.projeto.fachada;
+
+import android.content.Context;
+import java.util.ArrayList;
+[%for (projeto in projeto) { %]
+[% for (classes in projeto.classes) {%]
+import com.src.android.projeto.modelo.[%=classes.name.firstToUpperCase()%]DAO;	
+import com.src.android.projeto.modelo.[%=classes.name.firstToUpperCase()%]VO;
+[%}}%]	
+ /**@author Willamys Araujo
+ **Generate for Jacroid**/
+ 
+public class Fachada{
+
+	public static Fachada fachada = null; 
+
+	public Fachada() {
+	}
+	/***metodo estatico para obter a instancia da classe Fachada ***/
+	public static Fachada getInstance() {
+		if(fachada == null){
+			fachada = new Fachada();
+		}
+		return fachada;
+	}
+[%for (projeto in projeto) { %]
+[% for (classes in projeto.classes) {%]
+	/***INICIO [%=classes.name.firstToUpperCase()%]**/
+
+	/***metodo de insercao de [%=classes.name.firstToUpperCase()%]*
+	*  ctx passar contexto do view que esta em uso
+	*  [%=classes.name.firstToLowerCase()%] passar o objeto prenchido com valores dos atributos
+	* @return long - se o valor retornado for:
+	* -1 a "insercao falhou"
+	*  1 a "inserido com sucesso" **/
+	public long insert[%=classes.name.firstToUpperCase()%](Context ctx, [%=classes.name.firstToUpperCase()%]VO [%=classes.name.firstToLowerCase()%]) {
+		[%=classes.name.firstToUpperCase()%]DAO [%=classes.name.firstToLowerCase()%]Dao = new [%=classes.name.firstToUpperCase()%]DAO(ctx);
+		if([%=classes.name.firstToLowerCase()%] == null){
+			return -1;
+		}else{
+			return [%=classes.name.firstToLowerCase()%]Dao.insert[%=classes.name.firstToUpperCase()%]([%=classes.name.firstToLowerCase()%]);
+		}
+	}
+	/***metodo de alteracao de [%=classes.name.firstToUpperCase()%]*
+	*  ctx passar contexto do view que esta em uso**
+	*  [%=classes.name.firstToLowerCase()%] passar o objeto prenchido com valores dos atributos
+	* @return long - se o valor retornado for:
+	* -1 a "alteracao falhou"
+	*  1 a "alterado com sucesso" ***/
+	public long update[%=classes.name.firstToUpperCase()%](Context ctx, [%=classes.name.firstToUpperCase()%]VO [%=classes.name.firstToLowerCase()%]) {
+		[%=classes.name.firstToUpperCase()%]DAO [%=classes.name.firstToLowerCase()%]Dao = new [%=classes.name.firstToUpperCase()%]DAO(ctx);
+		if([%=classes.name.firstToLowerCase()%] == null){
+			return -1;
+		}else{
+			return [%=classes.name.firstToLowerCase()%]Dao.update[%=classes.name.firstToUpperCase()%]([%=classes.name.firstToLowerCase()%]);
+		}
+	}
+	/***metodo de insercao de [%=classes.name.firstToUpperCase()%]**
+	*  ctx passar contexto do view que esta em uso**
+	*  id passar o id que do registro a ser deletado
+	* @return long - se o valor retornado for:
+	* -1 a "delete falhou"
+	*  1 a "delete com sucesso" **/
+	public long delete[%=classes.name.firstToUpperCase()%](Context ctx, long id) {
+		[%=classes.name.firstToUpperCase()%]DAO [%=classes.name.firstToLowerCase()%]Dao = new [%=classes.name.firstToUpperCase()%]DAO(ctx);
+		if(id == 0 || id < 0){
+			return -1;
+		}else{
+			return [%=classes.name.firstToLowerCase()%]Dao.delete[%=classes.name.firstToUpperCase()%](id);
+		}
+	}
+	/***metodo de listar todos os registros de [%=classes.name.firstToUpperCase()%]**
+	*  ctx passar contexto do view que esta em uso
+	* @return ArrayList de Objeto da classe [%=classes.name.firstToUpperCase()%] preenchidos**/
+	public ArrayList<[%=classes.name.firstToUpperCase()%]VO> getAll[%=classes.name.firstToUpperCase()%](Context ctx) {
+		[%=classes.name.firstToUpperCase()%]DAO [%=classes.name.firstToLowerCase()%]Dao = new [%=classes.name.firstToUpperCase()%]DAO(ctx);
+		return [%=classes.name.firstToLowerCase()%]Dao.getAll[%=classes.name.firstToUpperCase()%](); 
+	}
+	/***metodo de listar registro por Id de [%=classes.name.firstToUpperCase()%]**
+	*  ctx passar contexto do view que esta em uso**
+	*  id passar o id que do registro a ser buscado
+	* @return Objeto da classe [%=classes.name.firstToUpperCase()%] preenchido**/
+	public [%=classes.name.firstToUpperCase()%]VO get[%=classes.name.firstToUpperCase()%]ById(Context ctx, long id) {
+		[%=classes.name.firstToUpperCase()%]DAO [%=classes.name.firstToLowerCase()%]Dao = new [%=classes.name.firstToUpperCase()%]DAO(ctx);
+		if(id == 0 || id < 0){
+			return null;
+		}else{
+			return [%=classes.name.firstToLowerCase()%]Dao.get[%=classes.name.firstToUpperCase()%]ById(id);
+		}
+	}
+	/***FIM [%=classes.name.firstToUpperCase()%]****/
+[%}}%]	
+}

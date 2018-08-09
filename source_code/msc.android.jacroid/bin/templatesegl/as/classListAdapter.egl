@@ -1,0 +1,66 @@
+package com.src.android.projeto.telas;
+
+import java.util.ArrayList;
+import com.src.android.projeto.R;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
+import com.src.android.projeto.modelo.[%=classes.name.firstToUpperCase()%]VO;
+
+ /**@author Willamys Araujo
+ **Generate for Jacroid**/
+
+public class [%=classes.name.firstToUpperCase()%]Adapter extends ArrayAdapter<String> {
+	
+	private final ArrayList<[%=classes.name.firstToUpperCase()%]VO> [%=classes.name.ToLowerCase()%]s;
+	private final ArrayList<String> keys[%=classes.name.firstToUpperCase()%]s;
+	private final Context context;
+	
+	public [%=classes.name.firstToUpperCase()%]Adapter(ArrayList<String> keys[%=classes.name.firstToUpperCase()%]s, ArrayList<[%=classes.name.firstToUpperCase()%]VO> [%=classes.name.ToLowerCase()%]s, Context context) {
+		super(context, R.layout.adapter, R.id.TextViewKey,keys[%=classes.name.firstToUpperCase()%]s);
+		this.keys[%=classes.name.firstToUpperCase()%]s = keys[%=classes.name.firstToUpperCase()%]s;
+		this.[%=classes.name.ToLowerCase()%]s = [%=classes.name.ToLowerCase()%]s;
+		this.context = context;
+	}
+	
+	@Override
+	public int getCount() {
+		return keys[%=classes.name.firstToUpperCase()%]s.size();
+	}
+
+	@Override
+	public String getItem(int position) {
+		return keys[%=classes.name.firstToUpperCase()%]s.get(position);
+	}
+
+	@Override
+	public long getItemId(int position) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		View view = LayoutInflater.from(this.context).inflate(R.layout.adapter, parent, false);
+		String key = keys[%=classes.name.firstToUpperCase()%]s.get(position);
+		TextView nome = (TextView) view.findViewById(R.id.TextViewKey);
+		nome.setText(String.valueOf(key));
+		return view;
+	}
+	
+	@Override
+	public View getDropDownView(int position, View convertView, ViewGroup parent) {
+		//[%=classes.name.firstToUpperCase()%]VO [%=classes.name.ToLowerCase()%] = [%=classes.name.ToLowerCase()%]s.get(position);
+		String key = keys[%=classes.name.firstToUpperCase()%]s.get(position);
+		TextView label = new TextView(context);
+		label.setTextSize(20f);
+		label.setPadding(10,10,10,10);
+		label.setText(key);
+		//label.setText(String.valueOf([%=classes.name.ToLowerCase()%].getKey[%=classes.name.firstToUpperCase()%]()));
+		return label;
+	}
+}

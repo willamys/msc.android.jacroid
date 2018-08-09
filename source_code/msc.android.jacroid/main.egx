@@ -1,0 +1,45 @@
+rule ClassVO 		
+	transform projeto : Projeto {
+	
+	// We only want to generate pages
+	// for books that have their public
+	// attribute set to true
+	//guard : class.b_public
+	
+//	parameters {
+		// These parameters will be made available
+		// to the invoked template as variables
+//		var params : new Map;
+//		params.put("index", projeto.classes.all.indexOf(class) + 1);
+	//	return params;
+	//}
+	// The EGL template to be invoked
+	template : "templatesegl/classVO.egl"
+	// Output file
+	target : "gen/Projeto/src/main/java/modelo/" + projeto + "VO.java"
+}
+/*
+rule AndroidManifest 
+	transform classe : t_classe {
+	
+	template : "templatesegl/androidmanifest.egl"
+	
+	target : "gen/Projeto/AndroidManifest.xml"
+}
+
+rule buildgradle 
+	transform classe : t_classe {
+	
+	template : "templatesegl/build.gradle.egl"
+	
+	target : "gen/Projeto/build.gradle"
+}
+
+rule defaultproperties 
+	transform classe : t_classe {
+	
+	template : "templatesegl/default.properties.egl"
+	
+	target : "gen/Projeto/default.properties"
+}
+*/

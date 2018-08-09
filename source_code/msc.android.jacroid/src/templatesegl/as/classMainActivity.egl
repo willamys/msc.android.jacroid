@@ -1,0 +1,117 @@
+package com.src.android.projeto.telas;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.src.android.projeto.R;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import com.src.android.projeto.util.FirebaseUtil;
+[%for (projeto in projeto) { %]
+	[% for (component in projeto.component) {%]
+	[%if(component.type.toString().equals("GPS")){%]
+import com.src.android.projeto.gps.[%=component.name.toString().firstToUpperCase()%];
+import com.src.android.projeto.gps.GpsMapsPointers;
+	[%}else if(component.type.toString().equals("CAMERA")){%]
+import com.src.android.projeto.camera.[%=component.name.toString().firstToUpperCase()%]Activity;
+	[%}else if(component.type.toString().equals("NFC")){%]
+import com.src.android.projeto.nfc.[%=component.name.toString().firstToUpperCase()%];
+[%}else if(component.type.toString().equals("WiFi")){%]
+import com.src.android.projeto.wifi.[%=component.name.toString().firstToUpperCase()%];
+	[%}%]
+	[%}%]
+[%}%]
+
+ /**@author Willamys Araujo
+ **Generate for Jacroid**/
+
+public class Main extends Activity{
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+[%for (projeto in projeto) { %]
+[% for (classes in projeto.classes) {%]
+		/**Botao para abrir o CRUD da Classe [%=classes.name.firstToUpperCase()%]*/
+		Button button[%=classes.name.firstToUpperCase()%] = (Button) findViewById(R.id.Button[%=classes.name.firstToUpperCase()%]);
+		button[%=classes.name.firstToUpperCase()%].setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				Intent i = new Intent(Main.this, [%=classes.name.firstToUpperCase()%]ListarActivity.class);
+				startActivity(i);
+			}
+		});
+[%}}%]
+
+[%for (projeto in projeto) { %]
+	[% for (component in projeto.component) {%]
+		[%if(component.type.toString().equals("GPS")){%]
+		/**Button button[%=component.name.toString().firstToUpperCase()%] = (Button) findViewById(R.id.Button[%=component.name.toString().firstToUpperCase()%]);
+		button[%=component.name.toString().firstToUpperCase()%].setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				Intent i = new Intent(Main.this, [%=component.name.toString().firstToUpperCase()%].class);
+				startActivity(i);
+			}
+		});
+		**/
+		Button buttonGpsMapsPointers = (Button) findViewById(R.id.ButtonGpsMapsPointers);
+		buttonGpsMapsPointers.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+			
+				Intent i = new Intent(Main.this, GpsMapsPointers.class);
+				startActivity(i);
+			}
+		});
+	[%}else if(component.type.toString().equals("CAMERA")){%]
+		/**Button button[%=component.name.toString().firstToUpperCase()%] = (Button) findViewById(R.id.Button[%=component.name.toString().firstToUpperCase()%]);
+		button[%=component.name.toString().firstToUpperCase()%].setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				Intent i = new Intent(Main.this, [%=component.name.toString().firstToUpperCase()%]Activity.class);
+				startActivity(i);
+			}
+		});
+		**/
+	[%}%]
+[%}}%]
+	}
+
+[%for (projeto in projeto) { %]
+[% if(projeto.firebaseAuth.isUndefined() <> true) {%]
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.mainmenu, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.item_info:
+			return true;
+		case R.id.sign_out:
+			signOut();
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+
+	private void signOut() {
+		FirebaseUtil.getInstance();
+		FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    	mAuth.signOut();
+    	Intent i = new Intent(Main.this,[%=projeto.firebaseAuth.name.firstToUpperCase%].class);
+		startActivity(i);
+	}
+}
+[%}else{}}%]

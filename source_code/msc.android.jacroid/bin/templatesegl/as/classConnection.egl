@@ -1,0 +1,60 @@
+package com.src.android.projeto.modelo;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import android.util.Log;
+
+/**@author Willamys Araujo
+	**Generate for Jacroid**/
+
+public class Connection extends SQLiteOpenHelper{
+	
+	private static final String TAG = "SQLiteHelper";
+	/**Nome do Banco de Dados**/
+	private static final String DATABASE_NAME = "bd_Projeto";
+	/**Versao do Banco de Dados**/
+	private static final int DATABASE_VERSION = 1;	
+[%for (projeto in projeto) { %]
+[% for (classes in projeto.classes) {%]
+	private static final String SCRIPT_DB_DELETE_[%=classes.name.ToUpperCase()%] = "DROP TABLE IF EXISTS t[%=classes.name.ToLowerCase()%]";
+[%}}%]
+	/**Criando a Tabela do Banco de Dados**/
+[%var size : Integer = 0;%]
+[%for (projeto in projeto) { %]
+[% for (classes in projeto.classes) {%]
+	private static final String SCRIPT_DB_CREATE_[%=classes.name.ToUpperCase()%] = 
+			"create table t[%=classes.name.ToLowerCase()%]("[%size = classes.attributes.size();%][%for (attributes in classes.attributes) {%]	
+[%if(attributes.primaryKey == true and attributes.primaryKeyTable == true){%]
+			+"[%=attributes.columnTable%] integer primary key autoincrement not null[%if(loopCount < size){%],[%}%]"[%}else{%]
+			+"[%=attributes.columnTable%][%if(attributes.typeData.toString.equals("String")){%] text [%}else if(attributes.typeData.toString.equals("int")){%] integer [%}else if(attributes.typeData.toString.equals("Long")){%] integer [%}else if(attributes.typeData.toString.equals("Boolean")){%] integer [%}%] not null[%if(loopCount < size){%],[%}%]"[%}}%]
+			
+			+");";	
+[%}}%]
+
+	public Connection(Context context) {
+		super(context, DATABASE_NAME, null, DATABASE_VERSION);
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public void onCreate(SQLiteDatabase db) {
+[%for (projeto in projeto) { %]
+[% for (classes in projeto.classes) {%]
+		db.execSQL(SCRIPT_DB_CREATE_[%=classes.name.ToUpperCase()%]);
+[%}}%]
+	}
+
+	@Override
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		Log.w(TAG, "Upgrading database from version " + oldVersion 
+                + " to "
+                + newVersion + ", which will destroy all old data");
+	[%for (projeto in projeto) { %]
+[% for (classes in projeto.classes) {%]
+		db.execSQL(SCRIPT_DB_DELETE_[%=classes.name.ToUpperCase()%]);
+[%}}%]
+		onCreate(db);
+	}
+}

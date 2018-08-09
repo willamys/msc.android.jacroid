@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/msc.android.jacroid/model/jacroidEMF.genmodel
+gmf_dashboard/domainModel=platform\:/resource/msc.android.jacroid/model/jacroidEMF.ecore
+gmf_dashboard/generationModel=platform\:/resource/msc.android.jacroid/model/jacroidEMF.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/msc.android.jacroid/model/jacroidEMF.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/msc.android.jacroid/model/jacroidEMF.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/msc.android.jacroid/model/jacroidEMF.gmftool

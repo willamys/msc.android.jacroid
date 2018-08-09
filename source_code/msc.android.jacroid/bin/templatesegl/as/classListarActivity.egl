@@ -1,0 +1,175 @@
+package com.src.android.projeto.telas;
+
+import java.util.ArrayList;
+import com.src.android.projeto.modelo.[%=classes.name.firstToUpperCase()%]VO;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MenuInflater;
+import android.widget.AdapterView;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import java.util.ArrayList;
+import com.src.android.projeto.util.FirebaseUtil;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.PopupMenu;
+import android.widget.Toast;
+import android.widget.TextView;
+import com.firebase.ui.database.FirebaseListAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.src.android.projeto.R;
+
+ /**@author Willamys Araujo
+ **Generate for Jacroid**/
+
+public class [%=classes.name.firstToUpperCase()%]ListarActivity extends Activity{
+
+	//Firebase
+	private FirebaseDatabase database;
+	
+	private LinearLayoutManager manager;
+	private ImageButton floatButton;
+	private DatabaseReference reference;
+	private String [%=classes.name.ToUpperCase()%]S_CHILD = "[%=classes.name.ToLowerCase()%]s";
+	private static final String tag = "[%=classes.name.firstToUpperCase()%]ListAct";
+	private ArrayList<[%=classes.name.firstToUpperCase()%]VO> array[%=classes.name.firstToUpperCase()%] = new ArrayList<>();
+	private ArrayList<String> keys = new ArrayList<>();
+	private ListView rv[%=classes.name.firstToUpperCase()%];
+	private FirebaseListAdapter<[%=classes.name.firstToUpperCase()%]VO> adapter;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.[%=classes.name.ToLowerCase()%]listaractivity);
+		rv[%=classes.name.firstToUpperCase()%] = (ListView) findViewById(R.id.rv[%=classes.name.firstToUpperCase()%]);
+		//rv[%=classes.name.firstToUpperCase()%].setHasFixedSize(true);
+		manager = new LinearLayoutManager(this);
+		manager.setReverseLayout(true);
+		manager.setStackFromEnd(true);
+		//rv[%=classes.name.firstToUpperCase()%].setLayoutManager(manager);
+		
+		[%if(projeto.firebaseAuth.isUndefined <> true){%]  
+		reference = FirebaseUtil.getReference("[%=classes.name.ToLowerCase()%]s").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+		[%}else{%]
+		reference = FirebaseUtil.getReference("[%=classes.name.ToLowerCase()%]s");
+[%}%]
+		adapter = new FirebaseListAdapter<[%=classes.name.firstToUpperCase()%]VO>(this, [%=classes.name.firstToUpperCase()%]VO.class, R.layout.item, reference) {
+			@Override
+			protected void populateView(final View view, [%=classes.name.firstToUpperCase()%]VO model, int position) {
+				final [%=classes.name.firstToUpperCase()%]VO [%=classes.name.firstToLowerCase()%]VO = model;
+				final DatabaseReference ref = getRef(position);
+				final String key = ref.getKey();
+				final TextView tvKey = (TextView) view.findViewById(R.id.key);
+				tvKey.setText(key);
+				final ImageButton imgbEdit = (ImageButton) view.findViewById(R.id.edit);
+				imgbEdit.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+
+						PopupMenu popupMenu = new PopupMenu(getApplicationContext(), imgbEdit);
+						popupMenu.inflate(R.menu.listmenu);
+						popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+							@Override
+							public boolean onMenuItemClick(MenuItem item) {
+								switch (item.getItemId()) {
+									case R.id.item_edit:
+										Intent i = new Intent([%=classes.name.firstToUpperCase()%]ListarActivity.this, [%=classes.name.firstToUpperCase()%]AlterarActivity.class);
+										Log.i(tag, "on click " + key);
+										i.putExtra("valor", key);
+										startActivityForResult(i, 1);
+										break;
+									case R.id.item_delete:
+										delete(ref, [%=classes.name.firstToLowerCase()%]VO);
+										break;
+									default:
+										break;
+								}
+								return false;
+							}
+						});
+						popupMenu.show();
+					}
+				});
+			}
+		};
+		
+		rv[%=classes.name.firstToUpperCase()%].setAdapter(adapter);
+		
+		floatButton = (ImageButton) findViewById(R.id.add);
+		floatButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent([%=classes.name.firstToUpperCase()%]ListarActivity.this, [%=classes.name.firstToUpperCase()%]CadastrarActivity.class);
+				startActivityForResult(i, 1);
+			}
+		});
+	
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.mainmenu, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case R.id.item_info:
+				return true;
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+	}
+	
+	public boolean delete(final DatabaseReference reference, final [%=classes.name.firstToUpperCase()%]VO [%=classes.name.firstToLowerCase()%]VO){
+		new AlertDialog.Builder(this).setTitle(this.getResources()
+				.getString(R.string.app_name)).setMessage(
+						"Voce realmente deseja deletar?").setPositiveButton("SIM", 
+								new android.content.DialogInterface.OnClickListener(){
+							@Override
+							public void onClick(DialogInterface arg0,
+									int arg1) {
+								String message = "";
+								long ret = FirebaseUtil.getInstance().delete(getApplicationContext(),[%=classes.name.ToUpperCase()%]S_CHILD, reference, [%=classes.name.firstToLowerCase()%]VO);
+								if( ret != -1 && ret != 0){
+									message = "Delete efetuado com sucesso.";
+								}else{
+									message = "Nao foi possivel efetuar o delete.";
+								}
+								Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+							}
+						}).setNegativeButton("No", new android.content.DialogInterface.OnClickListener(){
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+							}
+						}).show();
+		return false;
+	}
+	
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		Toast.makeText(this,data.getExtras().getString("valor"), Toast.LENGTH_LONG).show();
+	}
+
+	@Override
+	public void onBackPressed() 
+	{
+		Intent data = new Intent();
+		data.putExtra("valor", "");
+		setResult(2,data);
+		finish();
+	}
+}

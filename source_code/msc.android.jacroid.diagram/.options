@@ -1,0 +1,7 @@
+# Tracing options for the msc.android.jacroid.diagram plug-in
+
+# Common issues
+msc.android.jacroid.diagram/debug=false
+
+# Visual IDs
+msc.android.jacroid.diagram/debug/visualID=false

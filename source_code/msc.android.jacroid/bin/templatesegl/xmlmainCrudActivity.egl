@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ViewBgDefault"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#3e4a56"
+    android:padding="10dp"
+    android:text="[%=classes.name.firstToUpperCase()%]"
+    android:textColor="@color/white"
+    android:textSize="20sp"
+    android:textStyle="bold" />
+
+   	<Button
+	android:id="@+id/ButtonSendFeedbackCadastrar"
+	android:layout_height="wrap_content"
+	android:text="Novo"
+	android:layout_width="fill_parent">
+	</Button>
+	    
+    <Button
+	android:id="@+id/ButtonSendFeedbackListar"
+	android:layout_height="wrap_content"
+	android:text="Listar"
+	android:layout_width="fill_parent">
+	</Button>  
+	   
+	<TextView
+	android:id="@+id/textomain"  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"/>
+</LinearLayout>

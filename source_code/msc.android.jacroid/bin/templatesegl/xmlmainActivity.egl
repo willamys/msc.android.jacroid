@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ViewBgDefault"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+    
+ 	<TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#3e4a56"
+    android:padding="10dp"
+    android:text="Principal"
+    android:textColor="@color/white"
+    android:textSize="20sp"
+    android:textStyle="bold" />
+    
+[%for (projeto in projeto) { %]
+	[% for (classes in projeto.classes) {%]
+	<Button
+	android:id="@+id/Button[%=classes.name.firstToUpperCase()%]"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="[%=classes.name.firstToUpperCase()%]">
+	</Button>
+	[%}%]
+[%}%]
+
+[%for (projeto in projeto) { %]
+	[% for (component in projeto.component) {%]
+	[%if(component.type.toString().equals("GPS")){%]
+<!--	<Button
+	android:id="@+id/Button[%=component.name.toString().firstToUpperCase()%]"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="[%=component.name.toString().firstToUpperCase()%]">
+	</Button>
+	-->
+	<Button
+	android:id="@+id/ButtonGpsMapsPointers"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="GpsMapsPointers">
+	</Button>
+	[%}else if(component.type.toString().equals("CAMERA")){%]
+<!--	<Button
+	android:id="@+id/Button[%=component.name.toString().firstToUpperCase()%]"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="[%=component.name.toString().firstToUpperCase()%]">
+	</Button>-->
+[%}}}%]
+ 	<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/jacroid" />
+    </RelativeLayout>
+</LinearLayout>

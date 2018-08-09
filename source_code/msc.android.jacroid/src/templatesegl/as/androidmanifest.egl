@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.src.android.projeto" android:versionCode="1" android:versionName="1.0">
+	
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+[%for (projeto in projeto){
+	for (component in projeto.component){
+	if(component.type.toString().equals("GPS")){%]
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	[%}else if(component.type.toString().equals("CAMERA")){%]
+	<uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-feature android:name="android.hardware.camera" />
+[%}}}%]
+
+	<uses-sdk android:minSdkVersion="15"
+	android:targetSdkVersion="25" />
+	
+	<application android:icon="@drawable/ico" android:label="@string/app_name" android:allowBackup="true" android:theme="@style/AppTheme">
+	
+	 <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+[%for (projeto in projeto){
+	for (component in projeto.component){
+	if(component.type.toString().equals("GPS")){%]
+	<meta-data
+			android:name="com.google.android.geo.API_KEY"
+			android:value="@string/google_maps_key" />
+[%}}}%]
+	[%if(projeto.firebaseAuth.isUndefined <> true){%]
+		<activity android:name="com.src.android.projeto.telas.[%=projeto.firebaseAuth.name.firstToUpperCase%]" android:label="@string/app_name">
+	[%}else{%]
+		<activity android:name="com.src.android.projeto.telas.Main" android:label="@string/app_name">
+	[%}%]
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+	[%if(projeto.firebaseAuth.isUndefined <> true){%]
+		<activity android:name="com.src.android.projeto.telas.Main"></activity>
+	[%}else{}%]
+[%for (projeto in projeto) { %]
+	[% for (classes in projeto.classes) {%]
+		<activity android:name="com.src.android.projeto.telas.[%=classes.name%]CadastrarActivity"></activity>
+		<activity android:name="com.src.android.projeto.telas.[%=classes.name%]AlterarActivity"></activity>
+		<activity android:name="com.src.android.projeto.telas.[%=classes.name%]ListarActivity"></activity>
+	[%}%]
+[%}%]
+[%for (projeto in projeto) { %]
+	[% for (component in projeto.component) {
+		if(component.type.toString().equals("GPS")){%]
+		<activity android:name="com.src.android.projeto.[%=component.type.toString().ToLowerCase()%].[%=component.name.toString().firstToUpperCase()%]"></activity>
+		<activity android:name="com.src.android.projeto.[%=component.type.toString().ToLowerCase()%].GpsMapsPointers"></activity>
+	[%}else if(component.type.toString().equals("CAMERA")){%]
+		<activity android:name="com.src.android.projeto.[%=component.type.toString().ToLowerCase()%].[%=component.name.toString().firstToUpperCase()%]Activity" android:screenOrientation="landscape"></activity>
+[%}}}%]
+	</application>
+</manifest>

@@ -1,0 +1,60 @@
+package com.src.android.projeto.modelo;
+import java.util.*;
+import java.io.Serializable;
+
+/**@author Willamys Araujo
+**Generate for Jacroid**/
+
+public class [%=classes.name.firstToUpperCase()%]VO implements Serializable{
+
+[%for (attributes in classes.attributes) { %]
+[%if(attributes.typeData.toString().equals("Enumerate") or attributes.typeData.toString().equals("Image")){%]
+	public String [%=attributes.name%];
+[%}else{%]
+	public [%=attributes.typeData%] [%=attributes.name%];
+[%}}%]
+[%for (projeto in projeto){
+	for( relationClasses in projeto.relationClasses){
+		if(relationClasses.source.name.equals(classes.name)){%]
+	public String key[%=relationClasses.target.name%];
+[%}}}%]
+
+[%for (attributes in classes.attributes) { %]
+[%if(attributes.typeData.toString().equals("Enumerate") or attributes.typeData.toString().equals("Image")){%]
+	public String get[%=attributes.name.firstToUpperCase()%]() {
+		 return [%=attributes.name%];
+	}
+	public void set[%=attributes.name.firstToUpperCase()%](String [%=attributes.name%]) {
+		 this.[%=attributes.name%] = [%=attributes.name%];
+	}
+[%}else{%]
+	public [%=attributes.typeData%] get[%=attributes.name.firstToUpperCase()%]() {
+		 return [%=attributes.name%];
+	}
+	public void set[%=attributes.name.firstToUpperCase()%]([%=attributes.typeData%] [%=attributes.name%]) {
+		 this.[%=attributes.name%] = [%=attributes.name%];
+	}
+[%}}%]
+[%for (projeto in projeto){
+	for( relationClasses in projeto.relationClasses){
+		if(relationClasses.source.name.equals(classes.name)){%]
+	public String getKey[%=relationClasses.target.name.firstToUpperCase()%]() {
+		 return key[%=relationClasses.target.name.firstToUpperCase()%];
+	}
+	public void setKey[%=relationClasses.target.name.firstToUpperCase()%](String key[%=relationClasses.target.name.firstToUpperCase()%]) {
+		 this.key[%=relationClasses.target.name.firstToUpperCase()%] = key[%=relationClasses.target.name.firstToUpperCase()%];
+	}
+[%}}}%]
+ 	public Map<String, Object> toMap(){
+		HashMap<String, Object> result =  new HashMap<>();
+[%for (attributes in classes.attributes) { %]
+		result.put("[%=attributes.name%]", get[%=attributes.name.firstToUpperCase()%]());
+[%}%]
+[%for (projeto in projeto){
+	for( relationClasses in projeto.relationClasses){
+		if(relationClasses.source.name.equals(classes.name)){%]
+		result.put("key[%=relationClasses.target.name%]",getKey[%=relationClasses.target.name.firstToUpperCase()%]());
+[%}}}%]
+	return result;
+  	}
+}

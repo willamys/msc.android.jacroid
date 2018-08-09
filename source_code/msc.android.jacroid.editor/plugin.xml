@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated jacroidEMF -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="jacroidEMF.presentation.JacroidEMFModelWizardID"
+            name="%_UI_JacroidEMFModelWizard_label"
+            class="jacroidEMF.presentation.JacroidEMFModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/JacroidEMFModelFile.gif">
+         <description>%_UI_JacroidEMFModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated jacroidEMF -->
+      <editor
+            id="jacroidEMF.presentation.JacroidEMFEditorID"
+            name="%_UI_JacroidEMFEditor_label"
+            icon="icons/full/obj16/JacroidEMFModelFile.gif"
+            extensions="jacroidemf"
+            class="jacroidEMF.presentation.JacroidEMFEditor"
+            contributorClass="jacroidEMF.presentation.JacroidEMFActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

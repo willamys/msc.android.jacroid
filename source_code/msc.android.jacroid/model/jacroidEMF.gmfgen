@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgen:GenEditorGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" copyrightText="">
+  <diagram visualID="1000" editPartClassName="ProjetoEditPart" itemSemanticEditPolicyClassName="ProjetoItemSemanticEditPolicy" canonicalEditPolicyClassName="ProjetoCanonicalEditPolicy" iconProviderPriority="Low" validationProviderPriority="Low" validationEnabled="true" validationDecorators="true" liveValidationUIFeedback="true">
+    <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
+    <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ProjetoEditHelper"/>
+    <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
+    <containsShortcutsTo>jacroidEMF</containsShortcutsTo>
+    <shortcutsProvidedFor>jacroidEMF</shortcutsProvidedFor>
+    <domainDiagramElement href="jacroidEMF.genmodel#//jacroidEMF/Projeto"/>
+    <childNodes visualID="3002" editPartClassName="AttributeDescriptorEditPart" itemSemanticEditPolicyClassName="AttributeDescriptorItemSemanticEditPolicy" canonicalEditPolicyClassName="AttributeDescriptorCanonicalEditPolicy" graphicalNodeEditPolicyClassName="AttributeDescriptorGraphicalNodeEditPolicy" createCommandClassName="AttributeDescriptorCreateCommand" containers="//@diagram/@compartments.0">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="AttributeDescriptorEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AttributeDescriptorFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AttributeDescriptorFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureAttributeDescriptorLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AttributeDescriptorFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setOutline(false);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(16)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureAttributeDescriptorLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureAttributeDescriptorLabelFigure.setText(&quot;AttributeDescriptor&quot;);&#xA;&#xA;this.add(fFigureAttributeDescriptorLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureAttributeDescriptorLabelFigure() {&#xA;&#x9;&#x9;return fFigureAttributeDescriptorLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="100" height="16"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass href="jacroidEMF.genmodel#//jacroidEMF/AttributeDescriptor"/>
+        <containmentMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/ClassesDescriptor/attributes"/>
+        <childMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/ClassesDescriptor/attributes"/>
+      </modelFacet>
+      <labels visualID="5003" editPartClassName="AttributeDescriptorNameTypeDataEditPart" itemSemanticEditPolicyClassName="AttributeDescriptorNameTypeDataItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureAttributeDescriptorLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="{0} : {1}" editorPattern="{0} : {1}" editPattern="{0} : {1}">
+          <metaFeatures href="jacroidEMF.genmodel#//jacroidEMF/AttributeDescriptor/name"/>
+          <metaFeatures href="jacroidEMF.genmodel#//jacroidEMF/AttributeDescriptor/typeData"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes visualID="3005" editPartClassName="ItemEnumEditPart" itemSemanticEditPolicyClassName="ItemEnumItemSemanticEditPolicy" canonicalEditPolicyClassName="ItemEnumCanonicalEditPolicy" graphicalNodeEditPolicyClassName="ItemEnumGraphicalNodeEditPolicy" createCommandClassName="ItemEnumCreateCommand" containers="//@diagram/@compartments.1">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ItemEnumEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ItemEnumFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ItemEnumFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureItemEnumLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ItemEnumFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setOutline(false);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(16)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureItemEnumLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureItemEnumLabelFigure.setText(&quot;ItemEnum&quot;);&#xA;&#xA;this.add(fFigureItemEnumLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureItemEnumLabelFigure() {&#xA;&#x9;&#x9;return fFigureItemEnumLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="100" height="16"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass href="jacroidEMF.genmodel#//jacroidEMF/ItemEnum"/>
+        <containmentMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/Enumerate/item"/>
+        <childMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/Enumerate/item"/>
+      </modelFacet>
+      <labels visualID="5009" editPartClassName="ItemEnumNameEditPart" itemSemanticEditPolicyClassName="ItemEnumNameItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureItemEnumLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="{0}" editorPattern="{0}" editPattern="{0}">
+          <metaFeatures href="jacroidEMF.genmodel#//jacroidEMF/ItemEnum/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <topLevelNodes visualID="2002" editPartClassName="ClassesDescriptorEditPart" itemSemanticEditPolicyClassName="ClassesDescriptorItemSemanticEditPolicy" canonicalEditPolicyClassName="ClassesDescriptorCanonicalEditPolicy" compartments="//@diagram/@compartments.0" graphicalNodeEditPolicyClassName="ClassesDescriptorGraphicalNodeEditPolicy" createCommandClassName="ClassesDescriptorCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ClassesDescriptorEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ClassesDescriptorFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ClassesDescriptorFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureClassesDescriptorLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fClassesDescriptorAttributesCompartmentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ClassesDescriptorFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureClassesDescriptorLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureClassesDescriptorLabelFigure.setText(&quot;ClassesDescriptor&quot;);&#xA;fFigureClassesDescriptorLabelFigure.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(10000)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#xA;this.add(fFigureClassesDescriptorLabelFigure);&#xA;&#xA;&#xA;&#xA;fClassesDescriptorAttributesCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fClassesDescriptorAttributesCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fClassesDescriptorAttributesCompartmentFigure);&#xA;fClassesDescriptorAttributesCompartmentFigure.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureClassesDescriptorLabelFigure() {&#xA;&#x9;&#x9;return fFigureClassesDescriptorLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getClassesDescriptorAttributesCompartmentFigure() {&#xA;&#x9;&#x9;return fClassesDescriptorAttributesCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <behaviour xsi:type="gmfgen:OpenDiagramBehaviour"/>
+      <modelFacet>
+        <metaClass href="jacroidEMF.genmodel#//jacroidEMF/ClassesDescriptor"/>
+        <containmentMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/Projeto/classes"/>
+        <childMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/Projeto/classes"/>
+      </modelFacet>
+      <labels visualID="5004" editPartClassName="ClassesDescriptorNameEditPart" itemSemanticEditPolicyClassName="ClassesDescriptorNameItemSemanticEditPolicy" elementIcon="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureClassesDescriptorLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="jacroidEMF.genmodel#//jacroidEMF/ClassesDescriptor/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes visualID="2003" editPartClassName="ComponentEditPart" itemSemanticEditPolicyClassName="ComponentItemSemanticEditPolicy" canonicalEditPolicyClassName="ComponentCanonicalEditPolicy" graphicalNodeEditPolicyClassName="ComponentGraphicalNodeEditPolicy" createCommandClassName="ComponentCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ComponentEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ComponentFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComponentFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureComponentLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComponentFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureComponentLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureComponentLabelFigure.setText(&quot;Component&quot;);&#xA;&#xA;this.add(fFigureComponentLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureComponentLabelFigure() {&#xA;&#x9;&#x9;return fFigureComponentLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass href="jacroidEMF.genmodel#//jacroidEMF/Component"/>
+        <containmentMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/Projeto/component"/>
+        <childMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/Projeto/component"/>
+      </modelFacet>
+      <labels visualID="5005" editPartClassName="ComponentNameTypeEditPart" itemSemanticEditPolicyClassName="ComponentNameTypeItemSemanticEditPolicy" elementIcon="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureComponentLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="{0} use {1}" editorPattern="{0} use {1}" editPattern="{0} use {1}">
+          <metaFeatures href="jacroidEMF.genmodel#//jacroidEMF/Component/name"/>
+          <metaFeatures href="jacroidEMF.genmodel#//jacroidEMF/Component/type"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes visualID="2004" editPartClassName="EnumerateEditPart" itemSemanticEditPolicyClassName="EnumerateItemSemanticEditPolicy" canonicalEditPolicyClassName="EnumerateCanonicalEditPolicy" compartments="//@diagram/@compartments.1" graphicalNodeEditPolicyClassName="EnumerateGraphicalNodeEditPolicy" createCommandClassName="EnumerateCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="EnumerateEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="EnumerateFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EnumerateFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureEnumerateLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fEnumerateItemCompartmentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EnumerateFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureEnumerateLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureEnumerateLabelFigure.setText(&quot;Enumerate&quot;);&#xA;fFigureEnumerateLabelFigure.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(10000)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#xA;this.add(fFigureEnumerateLabelFigure);&#xA;&#xA;&#xA;&#xA;fEnumerateItemCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fEnumerateItemCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fEnumerateItemCompartmentFigure);&#xA;fEnumerateItemCompartmentFigure.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureEnumerateLabelFigure() {&#xA;&#x9;&#x9;return fFigureEnumerateLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getEnumerateItemCompartmentFigure() {&#xA;&#x9;&#x9;return fEnumerateItemCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <behaviour xsi:type="gmfgen:OpenDiagramBehaviour"/>
+      <modelFacet>
+        <metaClass href="jacroidEMF.genmodel#//jacroidEMF/Enumerate"/>
+        <containmentMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/Projeto/enumerate"/>
+        <childMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/Projeto/enumerate"/>
+      </modelFacet>
+      <labels visualID="5007" editPartClassName="EnumerateNameEditPart" itemSemanticEditPolicyClassName="EnumerateNameItemSemanticEditPolicy" elementIcon="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureEnumerateLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="jacroidEMF.genmodel#//jacroidEMF/Enumerate/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes visualID="2005" editPartClassName="FirebaseAuthEditPart" itemSemanticEditPolicyClassName="FirebaseAuthItemSemanticEditPolicy" canonicalEditPolicyClassName="FirebaseAuthCanonicalEditPolicy" graphicalNodeEditPolicyClassName="FirebaseAuthGraphicalNodeEditPolicy" createCommandClassName="FirebaseAuthCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="FirebaseAuthEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="FirebaseAuthFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class FirebaseAuthFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureFirebaseAuthLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public FirebaseAuthFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureFirebaseAuthLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureFirebaseAuthLabelFigure.setText(&quot;FirebaseAuth&quot;);&#xA;&#xA;this.add(fFigureFirebaseAuthLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureFirebaseAuthLabelFigure() {&#xA;&#x9;&#x9;return fFigureFirebaseAuthLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass href="jacroidEMF.genmodel#//jacroidEMF/FirebaseAuth"/>
+        <containmentMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/Projeto/firebaseAuth"/>
+        <childMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/Projeto/firebaseAuth"/>
+      </modelFacet>
+      <labels visualID="5010" editPartClassName="FirebaseAuthNameEditPart" itemSemanticEditPolicyClassName="FirebaseAuthNameItemSemanticEditPolicy" elementIcon="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureFirebaseAuthLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="jacroidEMF.genmodel#//jacroidEMF/FirebaseAuth/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <links visualID="4002" editPartClassName="RelationClassesDescriptorEditPart" itemSemanticEditPolicyClassName="RelationClassesDescriptorItemSemanticEditPolicy" createCommandClassName="RelationClassesDescriptorCreateCommand" reorientCommandClassName="RelationClassesDescriptorReorientCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="RelationClassesDescriptorEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="RelationClassesDescriptorFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RelationClassesDescriptorFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RelationClassesDescriptorFigure() {&#xA;&#x9;&#x9;this.setLineWidth(2);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet xsi:type="gmfgen:TypeLinkModelFacet">
+        <metaClass href="jacroidEMF.genmodel#//jacroidEMF/RelationClassesDescriptor"/>
+        <containmentMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/Projeto/relationClasses"/>
+        <childMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/Projeto/relationClasses"/>
+        <sourceMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/RelationClassesDescriptor/source"/>
+        <targetMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/RelationClassesDescriptor/target"/>
+      </modelFacet>
+    </links>
+    <links visualID="4004" editPartClassName="RelationAttributeDescriptorToComponentEditPart" itemSemanticEditPolicyClassName="RelationAttributeDescriptorToComponentItemSemanticEditPolicy" createCommandClassName="RelationAttributeDescriptorToComponentCreateCommand" reorientCommandClassName="RelationAttributeDescriptorToComponentReorientCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="RelationAttributeDescriptorToComponentEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="RelationAttributeDescriptorToComponentFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RelationAttributeDescriptorToComponentFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RelationAttributeDescriptorToComponentFigure() {&#xA;&#x9;&#x9;this.setLineWidth(2);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DOT);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet xsi:type="gmfgen:TypeLinkModelFacet">
+        <metaClass href="jacroidEMF.genmodel#//jacroidEMF/RelationAttributeDescriptorToComponent"/>
+        <containmentMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/Projeto/relationAttributeToComponent"/>
+        <childMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/Projeto/relationAttributeToComponent"/>
+        <sourceMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/RelationAttributeDescriptorToComponent/source"/>
+        <targetMetaFeature href="jacroidEMF.genmodel#//jacroidEMF/RelationAttributeDescriptorToComponent/target"/>
+      </modelFacet>
+    </links>
+    <compartments visualID="7002" editPartClassName="ClassesDescriptorClassesDescriptorAttributesCompartmentEditPart" itemSemanticEditPolicyClassName="ClassesDescriptorClassesDescriptorAttributesCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="ClassesDescriptorClassesDescriptorAttributesCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" title="ClassesDescriptorAttributesCompartment" canCollapse="false" needsTitle="false" node="//@diagram/@topLevelNodes.0">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getClassesDescriptorAttributesCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments visualID="7003" editPartClassName="EnumerateEnumerateItemCompartmentEditPart" itemSemanticEditPolicyClassName="EnumerateEnumerateItemCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="EnumerateEnumerateItemCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.1" title="EnumerateItemCompartment" canCollapse="false" needsTitle="false" node="//@diagram/@topLevelNodes.2">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getEnumerateItemCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <palette>
+      <groups title="Objects" collapse="true">
+        <entries xsi:type="gmfgen:ToolEntry" title="AttributeDescriptor" description="Create new AttributeDescriptor" genNodes="//@diagram/@childNodes.0"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="ClassesDescriptor" description="Create new ClassesDescriptor" genNodes="//@diagram/@topLevelNodes.0"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Component" description="Create new Component" genNodes="//@diagram/@topLevelNodes.1"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Enumerate" description="Create new Enumerate" genNodes="//@diagram/@topLevelNodes.2"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="FirebaseAuth" description="Create new FirebaseAuth" genNodes="//@diagram/@topLevelNodes.3"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="ItemEnum" description="Create new ItemEnum" genNodes="//@diagram/@childNodes.1"/>
+      </groups>
+      <groups title="Connections" collapse="true">
+        <entries xsi:type="gmfgen:ToolEntry" title="RelationAttributeDescriptorToComponent" description="Create new RelationAttributeDescriptorToComponent" genLinks="//@diagram/@links.1"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="RelationClassesDescriptor" description="Create new RelationClassesDescriptor" genLinks="//@diagram/@links.0"/>
+      </groups>
+    </palette>
+    <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="msc.android.jacroid.diagram.general" name="JacroidEMF Diagram">
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="msc.android.jacroid.diagram.appearance" name="Appearance" kind="Appearance"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="msc.android.jacroid.diagram.connections" name="Connections" kind="Connections"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="msc.android.jacroid.diagram.printing" name="Printing" kind="Printing"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="msc.android.jacroid.diagram.rulersAndGrid" name="Rulers And Grid" kind="RulersAndGrid"/>
+    </preferencePages>
+  </diagram>
+  <plugin printingEnabled="true">
+    <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
+    <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
+    <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
+  </plugin>
+  <editor/>
+  <navigator>
+    <childReferences child="//@diagram"/>
+    <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@childNodes.0"/>
+    <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.0"/>
+    <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.1"/>
+    <childReferences parent="//@diagram/@topLevelNodes.2" child="//@diagram/@childNodes.1"/>
+    <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.2"/>
+    <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.3"/>
+    <childReferences parent="//@diagram" child="//@diagram/@links.0" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.0" child="//@diagram/@topLevelNodes.0" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.0" child="//@diagram/@topLevelNodes.0" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@links.0" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram" child="//@diagram/@links.1" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.1" child="//@diagram/@topLevelNodes.1" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@topLevelNodes.1" child="//@diagram/@links.1" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.1" child="//@diagram/@childNodes.0" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.0" child="//@diagram/@links.1" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+  </navigator>
+  <diagramUpdater/>
+  <propertySheet>
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="appearance"/>
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="diagram"/>
+    <tabs xsi:type="gmfgen:GenCustomPropertyTab" iD="domain" label="Core">
+      <filter xsi:type="gmfgen:TypeTabFilter">
+        <types>org.eclipse.gmf.runtime.notation.View</types>
+        <types>org.eclipse.gef.EditPart</types>
+        <generatedTypes>abstractNavigatorItem</generatedTypes>
+      </filter>
+    </tabs>
+  </propertySheet>
+  <domainGenModel href="jacroidEMF.genmodel#/"/>
+  <labelParsers extensibleViaService="true">
+    <implementations xsi:type="gmfgen:PredefinedParser" uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet"/>
+  </labelParsers>
+  <contextMenus context="//@diagram">
+    <items xsi:type="gmfgen:LoadResourceAction"/>
+  </contextMenus>
+</gmfgen:GenEditorGenerator>

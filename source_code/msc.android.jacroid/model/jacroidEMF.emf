@@ -1,0 +1,94 @@
+@namespace(uri="jacroidEMF", prefix="jacroidEMF")
+@gmf
+package jacroidEMF;
+
+@gmf.diagram
+class Projeto {
+  val ClassesDescriptor[*] classes;
+  val Component[*] component;
+  val Enumerate[*] enumerate;
+  val FirebaseAuth firebaseAuth;
+  val RelationClassesDescriptor[*] relationClasses;
+  val RelationAttributeDescriptorToComponent[*] relationAttributeToComponent;
+}
+
+@gmf.node(label = "name, typeData", figure="rectangle", label.icon="false", label.pattern="{0} : {1}")
+class AttributeDescriptor {
+  attr String classname;
+  attr String columnTable;
+  attr String exhibitionName;
+  attr Input input;
+  attr Boolean isColumn;
+  attr String name;
+  attr Boolean primaryKey = false;
+  attr Boolean primaryKeyTable = false;
+  attr TypeData typeData;
+}
+
+@gmf.node(label = "name", figure="rectangle")
+class ClassesDescriptor{
+  attr String name;
+  attr String tableName;
+  @gmf.compartment(layout="list", collapsible="false")
+  val AttributeDescriptor[*] attributes;
+}
+
+@gmf.node(label = "name, type", figure="rectangle", label.pattern="{0} use {1}")
+class Component{
+  attr String name;
+  attr Type type;
+}
+
+@gmf.node(label = "name", figure="rectangle")
+class FirebaseAuth{
+	attr String name;
+}
+
+@gmf.node(label = "name", figure="rectangle")
+class Enumerate{
+	attr String name;
+	@gmf.compartment(layout="list", collapsible="false")
+	val ItemEnum[*] item;
+}
+
+@gmf.node(label = "name", figure="rectangle", label.icon="false", label.pattern="{0}")
+class ItemEnum {
+  attr String name;
+}
+
+@gmf.link(source="source", target="target", target.decoration="arrow", style="solid", width="2")
+class RelationClassesDescriptor {
+    ref ClassesDescriptor source;
+    ref ClassesDescriptor target;
+}
+
+@gmf.link(source="source", target="target", target.decoration="arrow", style="dot", width="2")
+class RelationAttributeDescriptorToComponent {
+    ref AttributeDescriptor source;
+    ref Component target;
+}
+
+enum TypeData{
+	String;
+	int;
+	Long;
+	Boolean;
+	Enumerate;
+	Image;
+}
+
+enum Type{
+	none;
+	GPS;
+	CAMERA;
+	NFC;
+}
+
+enum Input{
+	select;
+	text;
+	checkbox;
+	radiobutton;
+	hidden;
+	image;
+}

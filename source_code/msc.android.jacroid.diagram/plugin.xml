@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+
+-->
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="jacroidemf_diagram"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="jacroidemf_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="jacroidEMF.diagram.part.JacroidEMFDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/JacroidEMFDiagramFile.gif"
+         extensions="jacroidemf_diagram"
+         default="true"
+         class="jacroidEMF.diagram.part.JacroidEMFDiagramEditor"
+         matchingStrategy="jacroidEMF.diagram.part.JacroidEMFMatchingStrategy"
+         contributorClass="jacroidEMF.diagram.part.JacroidEMFDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="jacroidEMF.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/JacroidEMFDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="jacroidEMF.diagram.part.JacroidEMFCreationWizard"
+  	     id="jacroidEMF.diagram.part.JacroidEMFCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="msc.android.jacroid.diagram.InitDiagram"
+            nameFilter="*.jacroidemf"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="jacroidEMF.diagram.part.JacroidEMFInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="msc.android.jacroid.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="JacroidEMFPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="jacroidEMF.diagram.part.JacroidEMFDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="save">
+               </GlobalActionId>
+            </ElementType>        
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
+         id="JacroidEMFPresentationPrint">
+         <Priority name="Lowest"/>
+         <ViewId id="jacroidEMF.diagram.part.JacroidEMFDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="print"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="JacroidEMFPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="jacroidEMF.diagram.part.JacroidEMFDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="JacroidEMFRender">
+         <Priority name="Lowest"/>
+         <ViewId id="jacroidEMF.diagram.part.JacroidEMFDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
+      <?gmfgen generated="true"?>
+      <MarkerNavigationProvider class="jacroidEMF.diagram.providers.JacroidEMFMarkerNavigationProvider">
+         <MarkerType name="msc.android.jacroid.diagram.diagnostic"/>
+         <Priority name="Lowest"/>
+      </MarkerNavigationProvider>
+   </extension>
+
+   <extension id="diagnostic" name="JacroidEMF Plugin problems" point="org.eclipse.core.resources.markers">
+      <?gmfgen generated="true"?>
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+      <persistent value="true"/>
+   </extension>   
+
+   <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="jacroidEMF.diagram.providers.JacroidEMFValidationDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="jacroidEMF.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="msc.android.jacroid.diagram.general"
+            name="%prefpage.msc.android.jacroid.diagram.general"
+            class="jacroidEMF.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="msc.android.jacroid.diagram.appearance"
+            name="%prefpage.msc.android.jacroid.diagram.appearance"
+            category="msc.android.jacroid.diagram.general"
+            class="jacroidEMF.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="msc.android.jacroid.diagram.connections"
+            name="%prefpage.msc.android.jacroid.diagram.connections"
+            category="msc.android.jacroid.diagram.general"
+            class="jacroidEMF.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="msc.android.jacroid.diagram.printing"
+            name="%prefpage.msc.android.jacroid.diagram.printing"
+            category="msc.android.jacroid.diagram.general"
+            class="jacroidEMF.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="msc.android.jacroid.diagram.rulersAndGrid"
+            name="%prefpage.msc.android.jacroid.diagram.rulersAndGrid"
+            category="msc.android.jacroid.diagram.general"
+            class="jacroidEMF.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="msc.android.jacroid.diagram"
+            labelProvider="jacroidEMF.diagram.sheet.JacroidEMFSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="msc.android.jacroid.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="msc.android.jacroid.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="jacroidEMF.diagram.sheet.JacroidEMFPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="jacroidEMF.diagram.navigator.JacroidEMFAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="jacroidEMF.diagram.providers.JacroidEMFViewProvider">
+         <Priority name="Lowest"/>
+         <object id="referencing-diagrams" class="org.eclipse.gmf.runtime.notation.Diagram">
+            <method name="getType()" value="jacroidEMF"/>
+         </object>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="JacroidEMF"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,2003,2004,2005,3002,3005"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4002,4004"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="jacroidEMF.diagram.providers.JacroidEMFEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="JacroidEMF"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2002,2003,2004,2005,3002,3005"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4002,4004"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5004,5005,5007,5010,5003,5009"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7002,7003"/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="jacroidEMF.diagram.providers.assistants.JacroidEMFModelingAssistantProviderOfProjetoEditPart">
+         <Priority name="Lowest"/>
+         <object class="jacroidEMF.diagram.edit.parts.ProjetoEditPart" id="Projeto_1000"/>
+         <context elements="Projeto_1000"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="jacroidEMF.diagram.providers.assistants.JacroidEMFModelingAssistantProviderOfClassesDescriptorEditPart">
+         <Priority name="Lowest"/>
+         <object class="jacroidEMF.diagram.edit.parts.ClassesDescriptorEditPart" id="ClassesDescriptor_2002"/>
+         <context elements="ClassesDescriptor_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="jacroidEMF.diagram.providers.assistants.JacroidEMFModelingAssistantProviderOfComponentEditPart">
+         <Priority name="Lowest"/>
+         <object class="jacroidEMF.diagram.edit.parts.ComponentEditPart" id="Component_2003"/>
+         <context elements="Component_2003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="jacroidEMF.diagram.providers.assistants.JacroidEMFModelingAssistantProviderOfEnumerateEditPart">
+         <Priority name="Lowest"/>
+         <object class="jacroidEMF.diagram.edit.parts.EnumerateEditPart" id="Enumerate_2004"/>
+         <context elements="Enumerate_2004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="jacroidEMF.diagram.providers.assistants.JacroidEMFModelingAssistantProviderOfFirebaseAuthEditPart">
+         <Priority name="Lowest"/>
+         <object class="jacroidEMF.diagram.edit.parts.FirebaseAuthEditPart" id="FirebaseAuth_2005"/>
+         <context elements="FirebaseAuth_2005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="jacroidEMF.diagram.providers.assistants.JacroidEMFModelingAssistantProviderOfAttributeDescriptorEditPart">
+         <Priority name="Lowest"/>
+         <object class="jacroidEMF.diagram.edit.parts.AttributeDescriptorEditPart" id="AttributeDescriptor_3002"/>
+         <context elements="AttributeDescriptor_3002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="jacroidEMF.diagram.providers.assistants.JacroidEMFModelingAssistantProviderOfItemEnumEditPart">
+         <Priority name="Lowest"/>
+         <object class="jacroidEMF.diagram.edit.parts.ItemEnumEditPart" id="ItemEnum_3005"/>
+         <context elements="ItemEnum_3005"/>
+      </modelingAssistantProvider>
+      
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="jacroidEMF.diagram.providers.JacroidEMFIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="jacroidEMF.diagram.providers.JacroidEMFParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders" id="decorator-provider">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="jacroidEMF.diagram.providers.JacroidEMFShortcutsDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
+            <method name="getType()" value="2002,2003,2004,2005"/>
+         </object>
+         <context decoratorTargets="generated-top-nodes"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="jacroidEMF">
+         <metamodelType
+               id="msc.android.jacroid.diagram.Projeto_1000"
+               name="%metatype.name.Projeto_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Projeto"
+               edithelper="jacroidEMF.diagram.edit.helpers.ProjetoEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="jacroidEMF">
+         <metamodelType
+               id="msc.android.jacroid.diagram.ClassesDescriptor_2002"
+               name="%metatype.name.ClassesDescriptor_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ClassesDescriptor"
+               edithelper="jacroidEMF.diagram.edit.helpers.ClassesDescriptorEditHelper">
+            <param name="semanticHint" value="2002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="jacroidEMF">
+         <metamodelType
+               id="msc.android.jacroid.diagram.Component_2003"
+               name="%metatype.name.Component_2003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Component"
+               edithelper="jacroidEMF.diagram.edit.helpers.ComponentEditHelper">
+            <param name="semanticHint" value="2003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="jacroidEMF">
+         <metamodelType
+               id="msc.android.jacroid.diagram.Enumerate_2004"
+               name="%metatype.name.Enumerate_2004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Enumerate"
+               edithelper="jacroidEMF.diagram.edit.helpers.EnumerateEditHelper">
+            <param name="semanticHint" value="2004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="jacroidEMF">
+         <metamodelType
+               id="msc.android.jacroid.diagram.FirebaseAuth_2005"
+               name="%metatype.name.FirebaseAuth_2005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="FirebaseAuth"
+               edithelper="jacroidEMF.diagram.edit.helpers.FirebaseAuthEditHelper">
+            <param name="semanticHint" value="2005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="jacroidEMF">
+         <metamodelType
+               id="msc.android.jacroid.diagram.AttributeDescriptor_3002"
+               name="%metatype.name.AttributeDescriptor_3002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="AttributeDescriptor"
+               edithelper="jacroidEMF.diagram.edit.helpers.AttributeDescriptorEditHelper">
+            <param name="semanticHint" value="3002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="jacroidEMF">
+         <metamodelType
+               id="msc.android.jacroid.diagram.ItemEnum_3005"
+               name="%metatype.name.ItemEnum_3005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ItemEnum"
+               edithelper="jacroidEMF.diagram.edit.helpers.ItemEnumEditHelper">
+            <param name="semanticHint" value="3005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="jacroidEMF">
+         <metamodelType
+               id="msc.android.jacroid.diagram.RelationClassesDescriptor_4002"
+               name="%metatype.name.RelationClassesDescriptor_4002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="RelationClassesDescriptor"
+               edithelper="jacroidEMF.diagram.edit.helpers.RelationClassesDescriptorEditHelper">
+            <param name="semanticHint" value="4002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="jacroidEMF">
+         <metamodelType
+               id="msc.android.jacroid.diagram.RelationAttributeDescriptorToComponent_4004"
+               name="%metatype.name.RelationAttributeDescriptorToComponent_4004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="RelationAttributeDescriptorToComponent"
+               edithelper="jacroidEMF.diagram.edit.helpers.RelationAttributeDescriptorToComponentEditHelper">
+            <param name="semanticHint" value="4004"/>
+         </metamodelType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="msc.android.jacroid.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="msc.android.jacroid.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="msc.android.jacroid.diagram.TypeContext">
+         <elementType ref="msc.android.jacroid.diagram.Projeto_1000"/>
+         <elementType ref="msc.android.jacroid.diagram.ClassesDescriptor_2002"/>
+         <elementType ref="msc.android.jacroid.diagram.Component_2003"/>
+         <elementType ref="msc.android.jacroid.diagram.Enumerate_2004"/>
+         <elementType ref="msc.android.jacroid.diagram.FirebaseAuth_2005"/>
+         <elementType ref="msc.android.jacroid.diagram.AttributeDescriptor_3002"/>
+         <elementType ref="msc.android.jacroid.diagram.ItemEnum_3005"/>
+         <elementType ref="msc.android.jacroid.diagram.RelationClassesDescriptor_4002"/>
+         <elementType ref="msc.android.jacroid.diagram.RelationAttributeDescriptorToComponent_4004"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="msc.android.jacroid.diagram.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="msc.android.jacroid.diagram"
+           properties="isURIEditorInput"
+           class="jacroidEMF.diagram.part.JacroidEMFUriEditorInputTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isShortcut">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="msc.android.jacroid.diagram.ShortcutPropertyTester"
+           type="org.eclipse.gmf.runtime.notation.View"
+           namespace="msc.android.jacroid.diagram"
+           properties="isShortcut"
+           class="jacroidEMF.diagram.part.JacroidEMFShortcutPropertyTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      <?gmfgen generated="true"?>
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="msc.android.jacroid.diagram.resourceContent"/>
+			<contentExtension pattern="msc.android.jacroid.diagram.domainResourceContent"/>
+            <contentExtension pattern="msc.android.jacroid.diagram.navigatorLinkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="msc.android.jacroid.diagram.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+      <?gmfgen generated="true"?>
+      <navigatorContent
+            id="msc.android.jacroid.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="normal" 
+            contentProvider="jacroidEMF.diagram.navigator.JacroidEMFNavigatorContentProvider" 
+            labelProvider="jacroidEMF.diagram.navigator.JacroidEMFNavigatorLabelProvider"
+            icon="icons/obj16/JacroidEMFDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="jacroidemf_diagram"/>
+               </and>
+               <instanceof value="jacroidEMF.diagram.navigator.JacroidEMFAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="msc.android.jacroid.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="jacroidEMF.diagram.navigator.JacroidEMFAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="msc.android.jacroid.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </possibleChildren>
+         <commonSorter 
+               id="msc.android.jacroid.diagram.navigatorSorter" 
+               class="jacroidEMF.diagram.navigator.JacroidEMFNavigatorSorter">
+            <parentExpression>
+               <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="jacroidemf_diagram"/>
+                  </and>
+                  <instanceof value="jacroidEMF.diagram.navigator.JacroidEMFAbstractNavigatorItem"/>
+               </or>
+            </parentExpression>
+         </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="msc.android.jacroid.diagram.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="jacroidEMF.diagram.navigator.JacroidEMFDomainNavigatorContentProvider" 
+            labelProvider="jacroidEMF.diagram.navigator.JacroidEMFDomainNavigatorLabelProvider"
+            icon="icons/obj16/JacroidEMFDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="jacroidemf"/>
+               </and>
+               <instanceof value="jacroidEMF.diagram.navigator.JacroidEMFDomainNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <instanceof value="jacroidEMF.diagram.navigator.JacroidEMFDomainNavigatorItem"/>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            id="msc.android.jacroid.diagram.navigatorActionProvider"
+            class="jacroidEMF.diagram.navigator.JacroidEMFNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="jacroidEMF.diagram.navigator.JacroidEMFAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="msc.android.jacroid.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+      <?gmfgen generated="true"?>
+      <linkHelper
+            id="msc.android.jacroid.diagram.navigatorLinkHelper"
+            class="jacroidEMF.diagram.navigator.JacroidEMFNavigatorLinkHelper">
+         <editorInputEnablement>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="msc.android.jacroid.diagram.isURIEditorInput"/>
+            </and>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="jacroidEMF.diagram.navigator.JacroidEMFAbstractNavigatorItem"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="jacroidEMF.diagram.part.JacroidEMFDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="jacroidEMF.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="jacroidEMF.diagram.updateDiagram"
+         contextId="jacroidEMF.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="msc.android.jacroid.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="jacroidEMF.diagram.part.JacroidEMFDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="jacroidEMF.diagram.edit.parts.ProjetoEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="jacroidEMF.diagram.part.JacroidEMFDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="msc.android.jacroid.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="jacroidEMF.diagram.part.JacroidEMFDiagramEditorID"
+         defaultHandler="jacroidEMF.diagram.part.LoadResourceAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
+<extension point="org.eclipse.ui.views">
+        <view
+              category="Jacroid Plugin"
+              class="jacroidEMF.diagram.m2t.TransformationView"
+              icon="icons/obj16/Jacroid.gif"
+              id="jacroidEMF.diagram.m2t.TransformationView"
+              name="Jacroid View"/>
+        <view
+              category="Jacroid Plugin"
+              class="jacroidEMF.diagram.m2t.ViewHelp"
+              id="jacroidEMF.diagram.m2t.Help"
+              name="Help">
+        </view>
+</extension>
+
+<extension point="org.eclipse.ui.actionSets">
+   <actionSet
+            description="Generate the sourcecode"
+            id="jacroidEMF.diagram.m2t.M2TAction.actionSet"
+            label="Gen Code"
+            visible="true">
+             <menu
+               id="com.xyz.xyzMenu" 
+               label="XYZ Menu"
+               path="additions"> 
+               <separator name="group1"/>
+               <separator name="option1"/>
+            </menu>
+      <action
+               class="jacroidEMF.diagram.m2t.M2TAction"
+               icon="icons/obj16/transformation.png"
+               id="jacroidEMF.diagram.m2t.M2TAction"
+               label="Gen Code"
+               mode="FORCE_TEXT"
+               style="push"
+               toolbarPath="transformationGroup"
+               tooltip="Generate the sourcecode">
+      </action>
+   </actionSet>
+</extension>
+
+ <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="Jacroid Menu"
+               mnemonic="M"
+               id="jacroidMenu">
+            <command
+                  commandId="msc.android.jacroid.diagram.Generate"
+                  icon="icons/obj16/transformation.png"
+                  label="Generate"
+                  style="push"
+                  tooltip="Generate Sourcecode">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+ <extension
+       point="org.eclipse.ui.commands">
+    <command
+          defaultHandler="msc.android.jacroid.diagram.m2t.GenerateHandler"
+          id="msc.android.jacroid.diagram.Generate"
+          name="Generate">
+    </command>
+ </extension>
+<!---
+<extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="Sample Action Set"
+            visible="true"
+            id="msc.android.jacroid.actionSet">
+         <menu
+               label="Sample &amp;Menu"
+               id="sampleMenu">
+            <separator
+                  name="sampleGroup">
+            </separator>
+         </menu>
+         <action
+               label="&amp;Sample Action"
+               icon="icons/sample.gif"
+               class="msc.android.jacroid.actions.SampleAction"
+               tooltip="Hello, Eclipse world"
+               menubarPath="sampleMenu/sampleGroup"
+               toolbarPath="sampleGroup"
+               id="msc.android.jacroid.actions.SampleAction">
+         </action>
+      </actionSet>
+   </extension>
+-->
+   <!-- optionally, specify keybindings -->
+   <contexts>
+   <context id="message">
+      <description>This is the sample context-sensitive help. There is a link to the help content below.</description>
+      <topic href="html/subtopic.html" label="Subtopic" />
+   </context>
+</contexts>
+   
+</plugin>

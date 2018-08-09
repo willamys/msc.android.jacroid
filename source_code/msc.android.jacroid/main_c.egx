@@ -1,0 +1,31 @@
+rule Class2Page 
+	transform classes : t_class {
+	
+	// We only want to generate pages
+	// for books that have their public
+	// attribute set to true
+	//guard : class.b_public
+	
+	parameters {
+		// These parameters will be made available
+		// to the invoked template as variables
+		var params : new Map;
+		params.put("index", t_class.all.indexOf(class) + 1);
+		return params;
+	}
+	
+	// The EGL template to be invoked
+	template : "templatesegl/class2page.egl"
+	
+	// Output file
+	target : "gen/Projeto/src/main/java/modelo/" + class.a_classname + "VO.java"
+	
+}
+
+rule Classe2Page 
+	transform classe : t_classe {
+	
+	template : "templatesegl/classe2page.egl"
+	
+	target : "gen/index.html"
+}

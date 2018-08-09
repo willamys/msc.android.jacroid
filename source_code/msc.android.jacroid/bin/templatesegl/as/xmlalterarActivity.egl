@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/ScrollView01"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:scrollbars="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ViewBgDefault"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+  <TextView
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="#3e4a56"
+	android:padding="10dp"
+	android:text="Alterar - [%=classes.name.firstToUpperCase()%]"
+	android:textColor="@color/white"
+	android:textSize="20sp"
+	android:textStyle="bold" />
+[%for (attributes in classes.attributes){%]
+[%if(attributes.input.toString().equals("text")){%]
+<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="[%=attributes.exhibitionName%]"
+    android:textColor="#3e4a56" >
+</TextView>
+<EditText
+    android:id="@+id/EditText[%=attributes.name%]"  
+    android:layout_height="wrap_content"
+    [%if(attributes.typeData.toString().equals("int") or attributes.typeData.toString().equals("Long")){%]
+    android:inputType="number"
+    [%}else{%]
+    android:inputType="textLongMessage"
+    [%}%]
+    android:layout_width="fill_parent" 
+    android:textColor="#3e4a56" >
+</EditText>
+[%}else if(attributes.input.toString().equals("hidden")){%][%}else if(attributes.input.toString().equals("select")){%]
+<TextView
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="[%=attributes.exhibitionName%]"
+    android:textColor="#3e4a56" >
+</TextView>
+<Spinner 
+    android:id="@+id/Spinner[%=attributes.name%]"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:textColor="#3e4a56" >
+</Spinner>
+[%}else if(attributes.input.toString().equals("image")){%]
+<TextView
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="[%=attributes.exhibitionName%]"
+    android:textColor="#3e4a56" >
+</TextView>
+<ImageView
+    android:id="@+id/ImageView[%=attributes.name%]"
+    android:layout_width="128dp"
+    android:layout_height="128dp"
+    android:src="@android:drawable/ic_menu_gallery" 
+    />
+<EditText
+    android:id="@+id/EditText[%=attributes.name%]"  
+    android:layout_height="wrap_content"
+    android:inputType="textLongMessage"
+    android:layout_width="match_parent" 
+    android:textColor="#3e4a56">
+</EditText>
+[%}else if(attributes.input.toString().equals("checkbox")){%]
+<CheckBox
+    android:id="@+id/CheckBox[%=attributes.name%]"  
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:textColor="#3e4a56"
+    android:text="[%=attributes.exhibitionName%]" >
+</CheckBox>
+[%}else if(attributes.input.toString().equals("radiobutton")){%]
+<TextView
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="[%=attributes.exhibitionName%]"
+    android:textColor="#3e4a56" >
+</TextView> 
+<RadioGroup
+    android:id="@+id/RadioGroup[%=attributes.name%]"  
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:textColor="#3e4a56" >
+</RadioGroup>[%}}%]
+[%for (projeto in projeto){
+	for( relationClasses in projeto.relationClasses){
+		if(relationClasses.source.name.equals(classes.name)){%]
+<TextView
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Key[%=relationClasses.target.name.firstToUpperCase()%]"
+    android:textColor="#3e4a56" >
+</TextView>
+<Spinner 
+    android:id="@+id/SpinnerKey[%=relationClasses.target.name.firstToUpperCase()%]"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:textColor="#3e4a56" >
+</Spinner>
+[%}}}%]
+<Button
+    android:id="@+id/ButtonSendFeedback"
+    android:layout_height="wrap_content"
+    android:text="Alterar"
+    android:layout_width="fill_parent">
+</Button> 
+<Button
+    android:id="@+id/ButtonBack"
+    android:layout_height="wrap_content"
+    android:text="Voltar"
+    android:layout_width="fill_parent">
+</Button> 
+</LinearLayout>
+</ScrollView>

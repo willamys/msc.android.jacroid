@@ -1,0 +1,199 @@
+package modelo;
+import java.util.ArrayList;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+
+	/**@author Willamys Araujo
+	**Generate for Jacroid**/
+
+	public class [%=classes.name.firstToUpperCase()%]DAO {
+
+[%for (attributes in classes.attributes) { %]
+		public static final String KEY_[%=attributes.name.ToUpperCase()%] = "[%=attributes.columnTable%]";
+[%}%]
+
+	/***@return
+[%for (attributes in classes.attributes) { %]
+		[%=attributes.typeData%] [%=attributes.name%]
+[%}%]
+	**/
+		private static final String DATABASE_TABLE = "t[%=classes.tableName.firstToLowerCase()%]";
+
+		private SQLiteDatabase db;
+		
+		private long result = 0;
+		
+		private Context context;
+
+		
+		public [%=classes.name.firstToUpperCase()%]DAO (Context ctx){
+			Connection dbHelper = new Connection(ctx);
+			this.context = ctx;
+			db = dbHelper.getWritableDatabase();
+		}
+
+		//---insert [%=classes.name.firstToUpperCase()%]---//
+		/***
+		 * @return long
+		 * db.insert()
+		 *  table
+		 *  column
+		 *  initialvalues
+		 * **/
+		public long insert[%=classes.name.firstToUpperCase()%]([%=classes.name.firstToUpperCase()%]VO obj[%=classes.name.firstToUpperCase()%]){
+			try{
+				ContentValues initialValues = new ContentValues();
+[%for (attributes in classes.attributes) { %]
+[%if(attributes.input.toString().equals("hidden") == false){ %]
+[%if(attributes.input.toString().equals("checkbox")){ %]
+				if(obj[%=classes.name.firstToUpperCase()%].[%=attributes.name.firstToLowerCase()%] == true){
+					initialValues.put(KEY_[%=attributes.name.ToUpperCase()%]),1);
+				}else{
+					initialValues.put(KEY_[%=attributes.name.ToUpperCase()%]),0);
+				}
+[%}else{%]
+				initialValues.put(KEY_[%=attributes.name.ToUpperCase()%], obj[%=classes.name.firstToUpperCase()%].[%=attributes.name.firstToLowerCase()%]);
+[%}}}%]
+				result = db.insert(DATABASE_TABLE, null, initialValues);
+				db.close();
+			}catch (Exception e) {
+				ConnectionException.erro(context, "Ocorreu um erro ao tentar inserir os dados.\n Erro:\n" + e.toString());
+			}
+			return result;
+		}
+
+		//---deletes a particular [%=classes.name.firstToUpperCase()%]---
+		/**
+		 * @return boolean
+		 * db.delete()
+		 *  table
+		 *  whereClause
+		 *  whereArgs
+		 * **/
+		public long delete[%=classes.name.firstToUpperCase()%](long rowId) {
+			try{
+				result = db.delete(DATABASE_TABLE, [%for(attributes in classes.attributes){%][%if(attributes.primaryKeyTable){%]KEY_[%=attributes.name.ToUpperCase()%][%}}%] + "=" + rowId, null);
+				db.close();
+			}catch (Exception e) {
+				ConnectionException.erro(context, "Ocorreu um erro ao tentar excluir os dados.\n Erro:\n" + e.toString());
+			}
+			return result;
+		}
+
+		//---retrieves all the [%=classes.name.firstToUpperCase()%]---
+
+		/**metodo query 
+		 * @return Cursor
+		 * db.query
+		 *  table
+		 *  String[] columns
+		 *  String selection
+		 *  selectionArgs
+		 *  groupby
+		 *  having
+		 *  orderby
+		 * **/
+		public ArrayList<[%=classes.name.firstToUpperCase()%]VO> getAll[%=classes.name.firstToUpperCase()%](){
+			ArrayList<[%=classes.name.firstToUpperCase()%]VO> array[%=classes.name.firstToUpperCase()%]VO = new ArrayList<[%=classes.name.firstToUpperCase()%]VO>();
+				try{
+					Cursor c = db.rawQuery("SELECT * FROM " + DATABASE_TABLE + " ; ",null);
+					if(c.moveToFirst()){
+						do{
+							[%=classes.name.firstToUpperCase()%]VO obj[%=classes.name.firstToUpperCase()%] = new [%=classes.name.firstToUpperCase()%]VO();
+[%for (attributes in classes.attributes){%][%if(attributes.typeData.toString().equals("int")){%]							obj[%=classes.name.firstToUpperCase()%].[%=attributes.name.firstToLowerCase()%] = Integer.parseInt(c.getString([%=loopCount-1%]).toString());
+[%}else if(attributes.typeData.toString().equals("String")){%] 							obj[%=classes.name.firstToUpperCase()%].[%=attributes.name.firstToLowerCase()%] = c.getString([%=loopCount-1%]).toString();
+[%}else if(attributes.typeData.toString().equals("Boolean")){%] 
+							if(c.getString([%=loopCount-1%]).toString().equals("0")){
+								obj[%=classes.name.firstToUpperCase()%].[%=attributes.name.firstToLowerCase()%] =  false;
+							}else{
+								obj[%=classes.name.firstToUpperCase()%].[%=attributes.name.firstToLowerCase()%] =  true;
+							}
+[%}else if(attributes.typeData.toString().equals("Long")){%]
+								obj[%=classes.name.firstToUpperCase()%].[%=attributes.name.firstToLowerCase()%] = Long.parseLong(c.getString([%=loopCount-1%]).toString());[%}}%]
+							array[%=classes.name.firstToUpperCase()%]VO.add(obj[%=classes.name.firstToUpperCase()%]);
+						} while (c.moveToNext());
+					}
+						c.close();		
+						db.close();
+				} catch (Exception e) {
+					ConnectionException.erro(context, "Ocorreu um erro no processo de listar os dados.\n Erro:\n" + e.toString());
+			}
+			return array[%=classes.name.firstToUpperCase()%]VO;
+		}
+
+
+		//---retrieves a particular [%=classes.name.firstToUpperCase()%]---
+		/**metodo query 
+		 * @return Cursor
+		 * db.query
+		 *  table
+		 *  String[] columns
+		 *  String selection
+		 *  selectionArgs
+		 *  groupby
+		 *  having
+		 *  orderby
+		 * **/
+		public [%=classes.name.firstToUpperCase()%]VO get[%=classes.name.firstToUpperCase()%]ById(long rowId) throws SQLException{
+				[%=classes.name.firstToUpperCase()%]VO obj[%=classes.name.firstToUpperCase()%] = new [%=classes.name.firstToUpperCase()%]VO();
+				try{
+					Cursor c = db.rawQuery("SELECT * FROM "+ DATABASE_TABLE + " WHERE "+ 
+[%for (attributes in classes.attributes){%][%if(attributes.primaryKeyTable){%]						KEY_[%=attributes.name.ToUpperCase()%][%}}%]+ "=" + rowId + ";", null);
+					if (c != null) {
+						c.moveToFirst();
+[%for (attributes in classes.attributes){%]
+[%if(attributes.typeData.toString().equals("int")){%]						obj[%=classes.name.firstToUpperCase()%].[%=attributes.name.firstToLowerCase()%] = Integer.parseInt(c.getString([%=loopCount-1%]).toString());
+[%}else if(attributes.typeData.toString().equals("String")){%]						obj[%=classes.name.firstToUpperCase()%].[%=attributes.name.firstToLowerCase()%] = c.getString([%=loopCount-1%]).toString();
+[%}else if(attributes.typeData.toString().equals("Boolean")){%] 	
+					if(c.getString($count).toString().equals("0")){
+						obj[%=classes.name.firstToUpperCase()%].[%=attributes.name.firstToLowerCase()%] =  false;
+					}else{
+						obj[%=classes.name.firstToUpperCase()%].[%=attributes.name.firstToLowerCase()%] =  true;
+					} 
+[%}else if(attributes.typeData.toString().equals("Long")){%] 						obj[%=classes.name.firstToUpperCase()%].[%=attributes.name.firstToLowerCase()%] = Long.parseLong(c.getString([%=loopCount-1%]).toString());
+			[%}}%]
+					}
+						c.close();
+						db.close();
+				} catch (Exception e) {
+					ConnectionException.erro(context, "Ocorreu um erro no processo de buscar as informacoes para alteracao.\n Erro:\n" + e.toString());
+				}
+			return obj[%=classes.name.firstToUpperCase()%];
+		}
+
+		//---updates a [%=classes.name.firstToUpperCase()%]---
+		/**@return boolean
+		 *  table
+		 *  values
+		 *  whereClause
+		 *  whereArgs 
+		 * **/
+		public long update[%=classes.name.firstToUpperCase()%]([%=classes.name.firstToUpperCase()%]VO obj[%=classes.name.firstToUpperCase()%]) 
+		{
+		try{
+			ContentValues initialValues = new ContentValues();
+[%for (attributes in classes.attributes) { %]
+[%if(attributes.input.toString().equals("hidden") == false){ %]
+[%if(attributes.input.toString().equals("checkbox")){ %]
+			if(obj[%=classes.name.firstToUpperCase()%].[%=attributes.name.firstToLowerCase()%] == true){
+				initialValues.put(KEY_[%=attributes.name.ToUpperCase()%]),1);
+			}else{
+				initialValues.put(KEY_[%=attributes.name.ToUpperCase()%]),0);
+			}
+[%}else{%]
+			initialValues.put(KEY_[%=attributes.name.ToUpperCase()%], obj[%=classes.name.firstToUpperCase()%].[%=attributes.name.firstToLowerCase()%]);
+[%}}}%]
+			result = db.update(DATABASE_TABLE, initialValues, 
+			[%for (attributes in classes.attributes) { %]
+			[%if(attributes.primaryKeyTable){%]
+			KEY_[%=attributes.name.ToUpperCase()%][%}}%] + "=" + obj[%=classes.name.firstToUpperCase()%].[%for (attributes in classes.attributes) { %][%if(attributes.primaryKeyTable){%][%=attributes.name.firstToLowerCase()%][%}}%], null);
+			db.close();
+			} catch (Exception e) {
+			ConnectionException.erro(context, "Ocorreu um erro ao tentar alterar os dados." + e.toString());
+		}
+			return result;
+		}
+	}

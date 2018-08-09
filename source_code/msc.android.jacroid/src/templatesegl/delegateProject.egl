@@ -1,0 +1,254 @@
+[%
+//TemplateFactory.setTemplateRoot("templatesegl");
+TemplateFactory.setOutputRoot(outputDir);
+
+init();
+
+operation init() {
+	if(IDE.equals("Eclipse")){
+		//chamada dos métodos
+		//runWriteSameFile("classConnection.egl","../gen/projeto/src/main/java/modelo/","Connection",".java");
+		//runWriteSameFile("classFachada.egl","../gen/projeto/src/main/java/fachada/","Fachada",".java");
+		//run("classActivity.egl","../gen/projeto/src/main/java/telas/","firstUpper","Activity.java");
+		//run("xmlmainCrudActivity.egl","../gen/projeto/res/layout/","allLower","activity.xml");
+		//classes
+		//run("classDAO.egl","../gen/projeto/src/main/java/modelo/","firstUpper","DAO.java");
+		//classes
+		run("classModel.egl","../gen/"+IDE.ToLowerCase()+"/projeto/src/modelo/","firstUpper","VO.java");
+		run("classCadastrarActivity.egl","../gen/"+IDE.ToLowerCase()+"/projeto/src/telas/","firstUpper","CadastrarActivity.java");
+		run("classAlterarActivity.egl","../gen/"+IDE.ToLowerCase()+"/projeto/src/telas/","firstUpper","AlterarActivity.java");
+		run("classListarActivity.egl","../gen/"+IDE.ToLowerCase()+"/projeto/src/telas/","firstUpper","ListarActivity.java");
+		run("classListAdapter.egl","../gen/"+IDE.ToLowerCase()+"/projeto/src/telas/","firstUpper","Adapter.java");
+		runWriteSameFile("classMainActivity.egl","../gen/"+IDE.ToLowerCase()+"/projeto/src/telas/","Main",".java");
+		//if(IDE.equals("AndroidStudio")){
+	//		runDefault("ClassViewHolder.egl","../gen/"+IDE.ToLowerCase()+"/projeto/src/telas/","ViewHolder",".java");
+		//	runDefault("xmlViewHolder.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/layout/","viewholder",".xml");
+		//}else{
+		runDefault("xmlItem.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/layout/","item",".xml");
+	//	}
+		runDefault("classConnectionException.egl","../gen/"+IDE.ToLowerCase()+"/projeto/src/modelo/","ConnectionException",".java");
+		runWriteSameFile("classFirebaseUtil.egl","../gen/"+IDE.ToLowerCase()+"/projeto/src/util/","FirebaseUtil",".java");
+		runDefault("classCrud.egl","../gen/"+IDE.ToLowerCase()+"/projeto/src/util/","Crud",".java");
+		
+		//layouts
+		run("xmllistarActivity.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/layout/","allLower","listaractivity.xml");
+		run("xmlcadastrarActivity.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/layout/","allLower","cadastraractivity.xml");
+		run("xmlalterarActivity.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/layout/","allLower","alteraractivity.xml");
+		runWriteSameFile("xmlmainActivity.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/layout/","main",".xml");
+		runDefault("xmllistaAdapter.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/layout/","adapter",".xml");
+		runDefault("oval.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/drawable/","oval",".xml");
+		runDefault("xmlSpinnerItem.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/layout/","spinneritem",".xml");
+		runDefault("xmlMap.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/layout/","map",".xml");
+		runDefault("google_maps_api.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/values/","google_maps_api",".xml");
+		
+		//values
+		runDefault("xmlstrings.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/values/","strings",".xml");
+		runDefault("xmlcolor.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/values/","color",".xml");
+		runDefault("xmldimens.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/values/","dimens",".xml");
+		runDefault("xmlversion.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/values/","version",".xml");
+		runDefault("xmlarrays.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/values/","arrays",".xml");
+		runDefault("xmlstyles.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/values/","styles",".xml");
+		
+		//menu
+		runDefault("xmlmainmenu.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/menu/","mainmenu",".xml");
+		runDefault("xmllistmenu.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/menu/","listmenu",".xml");
+		runWriteSameFile("xmlMenuImage.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/menu/","menuimage",".xml");
+		
+		//projeto
+		runWriteSameFile("androidmanifest.egl","../gen/"+IDE.ToLowerCase()+"/projeto/","Android","Manifest.xml");
+		runDefault("build.gradle.egl","../gen/"+IDE.ToLowerCase()+"/projeto/","build",".gradle");
+		runDefault("default.properties.egl","../gen/"+IDE.ToLowerCase()+"/projeto/","default",".properties");
+		runDefault("proguard.egl","../gen/"+IDE.ToLowerCase()+"/projeto/","proguard",".cfg");
+		runDefault("project.egl","../gen/"+IDE.ToLowerCase()+"/projeto/",".","project");
+		runDefault("classpath.egl","../gen/"+IDE.ToLowerCase()+"/projeto/",".","classpath");
+		runDefault("local.properties.egl","../gen/"+IDE.ToLowerCase()+"/projeto/","local.","properties");
+		runDefault("org.eclipse.buildship.core.prefs.egl","../gen/"+IDE.ToLowerCase()+"/projeto/.settings/","org.","eclipse.buildship.core.prefs");
+		runDefault("org.eclipse.jdt.core.prefs.egl","../gen/"+IDE.ToLowerCase()+"/projeto/.settings/","org.","eclipse.jdt.core.prefs.egl");
+		runDefault("google-services.egl","../gen/"+IDE.ToLowerCase()+"/projeto/","google-services",".json");	
+	
+		runComponentStart();
+		//inserir o component de authenticacao do firebase
+		runFirebaseAuth("xmlfirebaseauth.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/layout/","allLower",".xml");
+		runFirebaseAuth("classFirebaseauth.egl","../gen/"+IDE.ToLowerCase()+"/projeto/src/telas/","firstUpper",".java");
+	
+	}else if(IDE.equals("AndroidStudio")){
+		//classes
+		run("as/classModel.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/java/com/src/android/projeto/modelo/","firstUpper","VO.java");
+		run("as/classCadastrarActivity.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/java/com/src/android/projeto/telas/","firstUpper","CadastrarActivity.java");
+		run("as/classAlterarActivity.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/java/com/src/android/projeto/telas/","firstUpper","AlterarActivity.java");
+		run("as/classListarActivity.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/java/com/src/android/projeto/telas/","firstUpper","ListarActivity.java");
+		run("as/classListAdapter.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/java/com/src/android/projeto/telas/","firstUpper","Adapter.java");
+		runWriteSameFile("as/classMainActivity.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/java/com/src/android/projeto/telas/","Main",".java");
+	
+		//runDefault("as/ClassViewHolder.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/java/com/src/android/projeto/telas/","ViewHolder",".java");
+			
+		runDefault("as/classConnectionException.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/java/com/src/android/projeto/modelo/","ConnectionException",".java");
+		runWriteSameFile("as/classFirebaseUtil.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/java/com/src/android/projeto/util/","FirebaseUtil",".java");
+		runDefault("as/classCrud.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/java/com/src/android/projeto/util/","Crud",".java");
+		
+		//layouts
+		run("as/xmllistarActivity.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/layout/","allLower","listaractivity.xml");
+		run("as/xmlcadastrarActivity.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/layout/","allLower","cadastraractivity.xml");
+		run("as/xmlalterarActivity.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/layout/","allLower","alteraractivity.xml");
+		runWriteSameFile("as/xmlmainActivity.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/layout/","main",".xml");
+		runDefault("as/xmllistaAdapter.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/layout/","adapter",".xml");
+		runDefault("as/oval.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/drawable/","oval",".xml");
+		runDefault("as/xmlSpinnerItem.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/layout/","spinneritem",".xml");
+		runDefault("as/xmlMap.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/layout/","map",".xml");
+		runDefault("as/google_maps_api.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/values/","google_maps_api",".xml");
+		//runDefault("as/xmlViewHolder.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/layout/","viewholder",".xml");
+		runDefault("as/xmlItem.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/layout/","item",".xml");
+		//values
+		runDefault("as/xmlstrings.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/values/","strings",".xml");
+		runDefault("as/xmlcolor.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/values/","color",".xml");
+		runDefault("as/xmldimens.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/values/","dimens",".xml");
+		runDefault("as/xmlversion.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/values/","version",".xml");
+		runDefault("as/xmlarrays.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/values/","arrays",".xml");
+		runDefault("as/xmlstyles.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/values/","styles",".xml");
+		
+		//menu
+		runDefault("as/xmlmainmenu.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/menu/","mainmenu",".xml");
+		runDefault("as/xmllistmenu.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/menu/","listmenu",".xml");
+		runWriteSameFile("as/xmlMenuImage.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/menu/","menuimage",".xml");
+		
+		//projeto
+		runWriteSameFile("as/androidmanifest.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/","Android","Manifest.xml");
+		runDefault("as/build.gradle.app.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/","build",".gradle");
+		runDefault("as/build.gradle.egl","../gen/"+IDE.ToLowerCase()+"/projeto/","build",".gradle");
+		runDefault("as/settings.gradle.egl","../gen/"+IDE.ToLowerCase()+"/projeto/","settings",".gradle");
+		//runDefault("as/proguard.egl","../gen/"+IDE.ToLowerCase()+"/projeto/","proguard",".cfg");
+		//runDefault("as/project.egl","../gen/"+IDE.ToLowerCase()+"/projeto/",".","project");
+		//runDefault("as/classpath.egl","../gen/"+IDE.ToLowerCase()+"/projeto/",".","classpath");
+		//runDefault("as/local.properties.egl","../gen/"+IDE.ToLowerCase()+"/projeto/","local.","properties");
+		//runDefault("as/org.eclipse.buildship.core.prefs.egl","../gen/"+IDE.ToLowerCase()+"/projeto/.settings/","org.","eclipse.buildship.core.prefs");
+		//runDefault("as/org.eclipse.jdt.core.prefs.egl","../gen/"+IDE.ToLowerCase()+"/projeto/.settings/","org.","eclipse.jdt.core.prefs.egl");
+		runDefault("as/google-services.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/","google-services",".json");	
+	
+		runComponentStart();
+		//inserir o component de authenticacao do firebase
+		runFirebaseAuth("as/xmlfirebaseauth.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/layout/","allLower",".xml");
+		runFirebaseAuth("as/classFirebaseauth.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/java/com/src/android/projeto/telas/","firstUpper",".java");
+	}
+}
+
+/*** método que permiti criar os arquivos do projeto a partir de templates  
+	@param template localização do template
+	@param local diretório a ser salvo
+	@param caseText definir o 'case' do texto(upper, lower)
+	@param extension extensão do arquivo
+***/
+operation run(template : String, local : String, CaseText : String , extension: String) {
+	for(projeto in Projeto){
+		for (classes in projeto.classes) {
+			var implementation : Template = TemplateFactory.load(template);
+			implementation.populate("ide", IDE);
+			implementation.populate("classes", classes);
+			implementation.populate("projeto", projeto);
+			implementation.generate(local + caseText(CaseText,classes.name) + extension);
+		}
+	}
+}
+
+/*** método que permiti criar os arquivos do projeto a partir de templates  
+	@param template localização do template
+	@param local diretório a ser salvo
+	@param caseText definir o 'case' do texto(upper, lower)
+	@param extension extensão do arquivo
+***/
+operation runComponentStart() {
+	for(projeto in Projeto){
+			for (component in projeto.component) {
+				if(component.type.toString().equals("GPS")){
+					if(IDE.equals("Eclipse")){
+						component("xmlgps.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/layout/","allLower","gps.xml",component.name.toString());
+						component("classGps.egl","../gen/"+IDE.ToLowerCase()+"/projeto/src/gps/","firstUpper",component.name.toString()+".java",component.name.toString());
+						runWriteSameFile("classGpsMapsPointers.egl","../gen/"+IDE.ToLowerCase()+"/projeto/src/gps/","GpsMapsPointers",".java");
+					}else if(IDE.equals("AndroidStudio")){
+						component("as/xmlgps.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/layout/","allLower","gps.xml",component.name.toString());
+						component("as/classGps.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/java/com/src/android/projeto/gps/","firstUpper",component.name.toString()+".java",component.name.toString());
+						runWriteSameFile("as/classGpsMapsPointers.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/java/com/src/android/projeto/gps/","GpsMapsPointers",".java");
+					}
+				}else if(component.type.toString().equals("CAMERA")){
+					if(IDE.equals("Eclipse")){
+						component("xmlcamera.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/layout/","allLower","camera.xml",component.name.toString());
+						component("classCamera.egl","../gen/"+IDE.ToLowerCase()+"/projeto/src/camera/","firstUpper",component.name.toString()+"Activity.java",component.name.toString()+"Activity");
+						component("classCameraPreview.egl","../gen/"+IDE.ToLowerCase()+"/projeto/src/camera/","firstUpper",component.name.toString()+"Preview.java",component.name.toString());
+						runDefault("cam.egl","../gen/"+IDE.ToLowerCase()+"/projeto/res/drawable/","cam",".xml");
+					}else if(IDE.equals("AndroidStudio")){
+						component("as/xmlcamera.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/layout/","allLower","camera.xml",component.name.toString());
+						component("as/classCamera.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/java/com/src/android/projeto/camera/","firstUpper",component.name.toString()+"Activity.java",component.name.toString()+"Activity");
+						component("as/classCameraPreview.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/java/com/src/android/projeto/camera/","firstUpper",component.name.toString()+"Preview.java",component.name.toString());
+						runDefault("as/cam.egl","../gen/"+IDE.ToLowerCase()+"/projeto/app/src/main/res/drawable/","cam",".xml");
+					}
+				}else if(component.toString().equals("NFC")){
+					//implementation.generate(local + extension);
+				}else if(component.toString().equals("WiFi")){
+					//implementation.generate(local + extension);
+			}
+		}
+	}
+}
+
+operation component(template : String, local : String, CaseText : String , name: String, component: String){
+		var implementation : Template = TemplateFactory.load(template);
+		implementation.populate("component", component);
+		implementation.generate(local + caseText(CaseText,name));
+	
+}
+
+operation runFirebaseAuth(template : String, local : String, CaseText : String , extension: String) {
+	for(projeto in Projeto){
+		
+		if(projeto.firebaseAuth.isUndefined <> true){//verificar se foi adicionado ou a autenticacao
+			var implementation : Template = TemplateFactory.load(template);
+			implementation.populate("firebaseAuth", projeto.firebaseAuth);
+			implementation.generate(local + caseText(CaseText, projeto.firebaseAuth.name) + extension);
+		}
+	}
+}
+
+/*** método que permiti criar os arquivos do projeto a partir de templates que 
+	o merge entre classes diferentes é necessário 
+	@param template localização do template
+	@param local diretório a ser salvo
+	@param name nome do arquivo
+	@param extension extensão do arquivo
+***/
+operation runWriteSameFile(template : String, local : String, name: String, extension: String) {
+	for(projeto in Projeto){
+		for (classes in projeto.classes) {
+			var implementation : Template = TemplateFactory.load(template);
+			implementation.populate("classes", classes);
+			implementation.populate("projeto", projeto);
+			implementation.generate(local + name + extension);
+		}
+	}
+}
+/*** método que permiti criar os arquivos do projeto a partir de templates, mas que estes permanecem imutáveis
+	@param template localização do template
+	@param local diretório a ser salvo
+	@param name nome do arquivo
+	@param extension extensão do arquivo
+***/
+operation runDefault(template : String, local : String, name: String, extension: String) {
+			var implementation : Template = TemplateFactory.load(template);
+			implementation.generate(local + name + extension);
+}
+
+/***método para mudar o case nome dos arquivos
+	@param caseText
+	@param name
+*****/
+operation caseText(caseText : String, name :String){
+	if(caseText.equals("firstUpper")){
+		return name.firstToUpperCase();
+	}else if(caseText.equals("firstLower")){
+		return name.firstToLowerCase();
+	}else if(caseText.equals("allLower")){
+		return name.ToLowerCase();
+	}else if(caseText.equals("allUpper")){
+		return name.ToUpperCase();
+	}
+}
+
+%]

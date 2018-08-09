@@ -1,0 +1,113 @@
+package com.src.android.projeto.gps;
+import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.util.Log;
+
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.appindexing.Thing;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
+import com.src.android.projeto.R;
+
+import java.util.ArrayList;
+import java.util.List;
+[%for (projeto in projeto){
+for(relationAttributeToComponent in projeto.relationAttributeToComponent){
+	if(relationAttributeToComponent.target.type.toString().equals("GPS")){%]
+import com.src.android.projeto.modelo.[%=relationAttributeToComponent.source.classname.firstToUpperCase()%]VO;
+[%}}}%]
+import com.src.android.projeto.util.FirebaseUtil;
+
+ /**@author Willamys Araujo
+ **Generate for Jacroid**/
+
+public class GpsMapsPointers extends FragmentActivity implements OnMapReadyCallback {
+    private GoogleMap mMap;
+    DatabaseReference reference;
+    /***CRIANDO A LISTA DE PONTOS **/
+[%for (projeto in projeto){
+	for(relationAttributeToComponent in projeto.relationAttributeToComponent){
+		//if(relationAttributeToComponent.source.classname.equals(classes.name) and relationAttributeToComponent.target.type.toString().equals("GPS")){
+		if(relationAttributeToComponent.target.type.toString().equals("GPS")){%]
+	ArrayList<[%=relationAttributeToComponent.source.classname.firstToUpperCase()%]VO> [%=relationAttributeToComponent.source.classname.ToLowerCase()%]List;
+[%}}}%]
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.map);
+		[%if(IDE.equals("AndroidStudio")){%]
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+        [%}else{%]
+        MapFragment mapFragment = MapFragment.newInstance();
+		FragmentManager manager = getFragmentManager();
+	    FragmentTransaction transaction = manager.beginTransaction();
+	    transaction.add(R.id.map, mapFragment);           
+	    transaction.commit();
+	    mapFragment.getMapAsync(this);
+	    [%}%]
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+     	mMap = googleMap;
+    [%for (projeto in projeto){
+	for( relationAttributeToComponent in projeto.relationAttributeToComponent){
+		//if(relationAttributeToComponent.source.classname.equals(classes.name) and relationAttributeToComponent.target.type.toString().equals("GPS")){
+		if(relationAttributeToComponent.target.type.toString().equals("GPS")){%]
+	[*** CRIANDO A LISTA DE PONTOS **]
+		[%=relationAttributeToComponent.source.classname.ToLowerCase()%]List = new ArrayList<[%=relationAttributeToComponent.source.classname.firstToUpperCase()%]VO>();
+        reference = FirebaseUtil.getInstance().getReference("[%=relationAttributeToComponent.source.classname.ToLowerCase()%]s");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot msgSnapshot: dataSnapshot.getChildren()) {
+                [%if(projeto.firebaseAuth.isUndefined <> true){%]
+                	for(DataSnapshot msgSnapshot2: msgSnapshot.getChildren()){
+                	[%=relationAttributeToComponent.source.classname.ToLowerCase()%]List.add(msgSnapshot2.getValue([%=relationAttributeToComponent.source.classname.firstToUpperCase()%]VO.class));
+	                    String local = msgSnapshot2.getValue([%=relationAttributeToComponent.source.classname.firstToUpperCase()%]VO.class).get[%=relationAttributeToComponent.source.name.firstToUpperCase()%]();
+	                    String latit =  local.substring(0,local.indexOf(","));
+	                    String longi = local.substring(local.indexOf(",")+1, local.length()-1);
+	                   	LatLng locate = new LatLng(Double.parseDouble(latit),Double.parseDouble(longi));
+	                   	mMap.addMarker(new MarkerOptions().position(locate).snippet(msgSnapshot2.getKey()).title("[%=relationAttributeToComponent.source.classname.ToLowerCase()%]"));
+	                   	mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(locate,18));
+                	}
+                }
+			[%}else{%]
+                   [%=relationAttributeToComponent.source.classname.ToLowerCase()%]List.add(msgSnapshot.getValue([%=relationAttributeToComponent.source.classname.firstToUpperCase()%]VO.class));
+                    String local = msgSnapshot.getValue([%=relationAttributeToComponent.source.classname.firstToUpperCase()%]VO.class).get[%=relationAttributeToComponent.source.name.firstToUpperCase()%]();
+                    String latit =  local.substring(0,local.indexOf(","));
+                    String longi = local.substring(local.indexOf(",")+1, local.length()-1);
+                   	LatLng locate = new LatLng(Double.parseDouble(latit),Double.parseDouble(longi));
+                   	mMap.addMarker(new MarkerOptions().position(locate).snippet(msgSnapshot2.getKey()).title("[%=relationAttributeToComponent.source.classname.ToLowerCase()%]"));
+                   	mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(locate,18));
+                }
+             [%}%]
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+      
+	[%}}}%]
+    }
+}

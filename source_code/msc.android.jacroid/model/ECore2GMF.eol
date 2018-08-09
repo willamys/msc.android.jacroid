@@ -1,0 +1,34 @@
+-- Find the compartment figure
+var classesDescriptorAttributesCompartmentFigure = GmfGraph!Rectangle.all.
+   selectOne(r|r.name = 'ClassesDescriptorAttributesCompartmentFigure');
+var enumerateItemCompartmentFigure = GmfGraph!Rectangle.all.
+   selectOne(r|r.name = 'EnumerateItemCompartmentFigure');
+
+-- ... and add a stack layout to it
+classesDescriptorAttributesCompartmentFigure.layout = new GmfGraph!StackLayout;
+enumerateItemCompartmentFigure.layout = new GmfGraph!StackLayout;
+
+-- Find the attribute figure
+var attributeDescriptorFigure = GmfGraph!Rectangle.all.
+    selectOne(r|r.name = 'AttributeDescriptorFigure');
+var itemEnumFigure = GmfGraph!Rectangle.all.
+    selectOne(r|r.name = 'ItemEnumFigure');
+
+-- ... delete its border
+delete attributeDescriptorFigure.border;
+delete itemEnumFigure.border;
+
+-- ... set its outline to false
+attributeDescriptorFigure.outline = false;
+itemEnumFigure.outline = false;
+
+-- ... and add a preferred size to it
+var preferredSize = new GmfGraph!Dimension;
+preferredSize.dx = 100;
+preferredSize.dy = 16;
+
+var preferredSize2 = new GmfGraph!Dimension;
+preferredSize2.dx = 100;
+preferredSize2.dy = 16;
+attributeDescriptorFigure.preferredSize = preferredSize2;
+itemEnumFigure.preferredSize = preferredSize;

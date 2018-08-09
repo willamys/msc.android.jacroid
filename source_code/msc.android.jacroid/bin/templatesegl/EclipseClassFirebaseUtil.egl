@@ -1,0 +1,97 @@
+package util;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import android.content.Context;
+
+import java.util.Map;
+
+ /**@author Willamys Araujo
+ **Generate for Jacroid**/
+
+public class FirebaseUtil<T> implements Crud<T>{
+	
+	private FirebaseDatabase firebaseDatabase = null;
+	private static FirebaseUtil firebaseUtil = null;
+	private StorageReference storageReference = null;
+	private FirebaseAuth firebaseauth = null; 
+	private static FirebaseApp firebaseApp = null;
+
+	public FirebaseUtil() {}
+	
+	public static FirebaseUtil getInstance() {
+		if(firebaseUtil == null){
+			firebaseUtil = new FirebaseUtil();
+		}
+		return firebaseUtil;
+	}
+
+	public void getInit(Context context){
+		if(firebaseApp == null ){
+			FirebaseOptions firebaseOptions = new FirebaseOptions.Builder()
+					.setDatabaseUrl("[YOUR_DATABASE]")
+					.setApiKey("[YOUR_APP_KEY]")
+					.setStorageBucket("[YOUR_STORAGE]")
+					.setApplicationId("[YOUR_APPLICATION_ID]").build();
+			firebaseApp = FirebaseApp.initializeApp(context, firebaseOptions);
+			
+			firebaseDatabase = FirebaseDatabase.getInstance();
+			firebaseDatabase.setPersistenceEnabled(true);
+			storageReference = FirebaseStorage.getInstance().getReference();
+			firebaseauth = FirebaseAuth.getInstance();
+		}else{
+			firebaseDatabase = FirebaseDatabase.getInstance();
+			storageReference = FirebaseStorage.getInstance().getReference();
+			firebaseauth = FirebaseAuth.getInstance();
+		}
+	}
+
+	public FirebaseDatabase getFirebaseDatabase(){
+		return firebaseDatabase;
+	}
+
+	public StorageReference getStorageReference() {
+		return storageReference;
+	}
+
+	public FirebaseAuth getFirebaseAuth() {
+		return firebaseauth;
+	}
+
+	@Override
+	public long insert(Context context, String reference, T vo) {
+		getInit(context);
+		if(vo == null){
+			return -1;
+		}else{
+			getFirebaseDatabase().getReference(reference).push().setValue(vo);
+			return 1;
+		}
+	}
+
+	@Override
+	public long update(Context context, String reference, DatabaseReference dtReference, Map<String, Object> values) {
+		if(values == null){
+			return -1;
+		}else{
+			dtReference.updateChildren(values);
+			return 1;
+		}
+	}
+
+	@Override
+	public long delete(Context context, String reference, DatabaseReference dtReference, T vo) {
+		if(vo == null){
+			return -1;
+		}else{
+			dtReference.removeValue();
+			return 1;
+		}
+	}
+}

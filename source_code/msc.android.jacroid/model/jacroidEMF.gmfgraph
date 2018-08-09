@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="jacroidEMF">
+  <figures name="Default">
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="RelationClassesDescriptorFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="RelationAttributeDescriptorToComponentFigureTargetDecoration"/>
+    <descriptors name="AttributeDescriptorFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="AttributeDescriptorFigure" outline="false">
+        <preferredSize dx="100" dy="16"/>
+        <children xsi:type="gmfgraph:Label" name="AttributeDescriptorLabelFigure" text="AttributeDescriptor"/>
+      </actualFigure>
+      <accessors accessor="getFigureAttributeDescriptorLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ClassesDescriptorFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ClassesDescriptorFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ClassesDescriptorLabelFigure" text="ClassesDescriptor">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="ClassesDescriptorAttributesCompartmentFigure" outline="false">
+          <layout xsi:type="gmfgraph:StackLayout"/>
+        </children>
+      </actualFigure>
+      <accessors accessor="getFigureClassesDescriptorLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors accessor="getClassesDescriptorAttributesCompartmentFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="ComponentFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ComponentFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ComponentLabelFigure" text="Component"/>
+      </actualFigure>
+      <accessors accessor="getFigureComponentLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="FirebaseAuthFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="FirebaseAuthFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="FirebaseAuthLabelFigure" text="FirebaseAuth"/>
+      </actualFigure>
+      <accessors accessor="getFigureFirebaseAuthLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="EnumerateFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="EnumerateFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="EnumerateLabelFigure" text="Enumerate">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="EnumerateItemCompartmentFigure" outline="false">
+          <layout xsi:type="gmfgraph:StackLayout"/>
+        </children>
+      </actualFigure>
+      <accessors accessor="getFigureEnumerateLabelFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+      <accessors accessor="getEnumerateItemCompartmentFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="ItemEnumFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ItemEnumFigure" outline="false">
+        <preferredSize dx="100" dy="16"/>
+        <children xsi:type="gmfgraph:Label" name="ItemEnumLabelFigure" text="ItemEnum"/>
+      </actualFigure>
+      <accessors accessor="getFigureItemEnumLabelFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="RelationClassesDescriptorFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RelationClassesDescriptorFigure" lineWidth="2" targetDecoration="//@figures.0/@figures.0"/>
+    </descriptors>
+    <descriptors name="RelationAttributeDescriptorToComponentFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RelationAttributeDescriptorToComponentFigure" lineWidth="2" lineKind="LINE_DOT" targetDecoration="//@figures.0/@figures.1"/>
+    </descriptors>
+  </figures>
+  <nodes name="AttributeDescriptor" figure="AttributeDescriptorFigure"/>
+  <nodes name="ClassesDescriptor" figure="ClassesDescriptorFigure"/>
+  <nodes name="Component" figure="ComponentFigure"/>
+  <nodes name="FirebaseAuth" figure="FirebaseAuthFigure"/>
+  <nodes name="Enumerate" figure="EnumerateFigure"/>
+  <nodes name="ItemEnum" figure="ItemEnumFigure"/>
+  <connections name="RelationClassesDescriptor" figure="RelationClassesDescriptorFigure"/>
+  <connections name="RelationAttributeDescriptorToComponent" figure="RelationAttributeDescriptorToComponentFigure"/>
+  <compartments name="ClassesDescriptorAttributesCompartment" figure="ClassesDescriptorFigure" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <compartments name="EnumerateItemCompartment" figure="EnumerateFigure" accessor="//@figures.0/@descriptors.4/@accessors.1"/>
+  <labels name="AttributeDescriptorLabel" figure="AttributeDescriptorFigure" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="ClassesDescriptorLabel" figure="ClassesDescriptorFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="ComponentLabel" figure="ComponentFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="FirebaseAuthLabel" figure="FirebaseAuthFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="EnumerateLabel" figure="EnumerateFigure" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+  <labels name="ItemEnumLabel" figure="ItemEnumFigure" elementIcon="false" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
+</gmfgraph:Canvas>
